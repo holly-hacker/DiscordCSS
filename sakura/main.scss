@@ -10,8 +10,8 @@ div[class*="layer-"] > div[class*="container-"] {
 }
 
 // Channel list
-div[class*="channels"] {
-	div[class*="scrollerWrap"] {
+div[class*="channels-"] {
+	div[class*="scrollerWrap-"] {
 		// #'s
 		svg {
 			color: $main-color!important;
@@ -22,10 +22,9 @@ div[class*="channels"] {
 		// Unread notif
 		div[class*="unread-"] {
 			background: $main-color;
-			border-radius: 5px 0px 0px 5px;
+			border-radius: 5px 0 0 5px;
 			height: 100%;
 			left: 4px;
-			//width: 8px;
 			top: 0;
 			margin: 0;
 		}
@@ -41,27 +40,30 @@ div[class*="channels"] {
 	// Default channels
 	div[class*="contentDefaultText-"], div[class*="contentUnreadText-"], div[class*="contentMutedText-"], div[class*="contentDefaultVoice-"] {
 		background-color: transparent;
-		border-left: 0px solid rgba($main-color, 0%);
-		transition: background-color 0.2s ease-out, border-left-width 0.5s ease-in, border-color 0.4s ease-in;
+		border-left: 0px solid transparent;
+		transition: background-color    $time-unhover*0.4 ease-out,
+		            border-left-width   $time-unhover ease-in,
+		            border-color        $time-unhover*0.8 ease-in;
 	}
 
 	// Hovered channels
 	div[class*="contentHoveredText-"], div[class*="contentHoveredVoice-"]:active, div[class*="contentSelectedVoice-"]:active { 
-		background-color: rgba($main-color, 25%);
-		border-left: 5px solid rgba($main-color, 100%);
-		transition: background-color 0.05s, border-left-width 0.1s;
+		background-color: $color-channel-hover;
+		border-left: 5px solid $color-channel-border;
+		transition: background-color    $time-hover*0.4,
+		            border-left-width   $time-hover*0.8;
 	}
 	
 	// Selected channels
 	div[class*="contentSelectedText-"] { 
-		background-color: rgba($main-color, 50%);
-		border-left: 5px solid rgba($main-color, 100%);
-		transition: background-color 0.3s cubic-bezier(0,.75,1,1.5);
+		background-color: $color-channel-select;
+		border-left: 5px solid $color-channel-border;
+		transition: background-color 0.3s cubic-bezier(0,.75,1,2);
 	}
 
 	// Channel names
 	div[class*="nameDefaultText"], div[class*="nameDefaultVoice"], div[class*="nameLockedText"], div[class*="nameLockedVoice"] {
-		color: #888;
+		color: #888; // Brighten a bit
 	}
 }
 
@@ -78,18 +80,21 @@ div[class*="channels"] {
 
 // Chat box
 .theme-dark div[class*="inner-"] {
-	$time1: 0.5s;
-	$time2: 0.25s;
 	border: 1px solid rgba(desaturate($main-color, 90%), 50%);
 
 	background-color: rgba(#222, .1);
-	transition: background-color $time1, border-color $time1, box-shadow $time1;
+	transition: background-color $time-hover*2, 
+				border-color $time-hover*2, 
+	            box-shadow $time-hover*2;
 	box-shadow: $main-color 0 0 0px;
+
 	&:hover{
 		border: 1px solid rgba(desaturate($main-color, 25%), 75%);
 		background-color: rgba(#888, .2);
 		box-shadow: rgba($main-color, 50%) 0 0 5px;
-		transition: background-color $time2, border-color $time2, box-shadow $time2;
+		transition: background-color $time-unhover, 
+					border-color $time-unhover, 
+		            box-shadow $time-unhover;
 	}
 
 	// Textarea
@@ -128,6 +133,65 @@ div[class*="channels"] {
 	}
 }
 
+// Member list
+.theme-dark div[class*="member-"] {
+	// Normal
+	div[class*="content-"] {
+		background: transparent;
+		transition: background-color $time-unhover;
+	}
+
+	// Hovered
+	&:hover div[class*="content-"] {
+		background: $color-user-hover;
+		transition: background-color $time-hover;
+	}
+
+	// Selected
+	&.popout-open div[class*="content-"], &.popout-open:hover div[class*="content-"] {
+		background: $color-user-select;
+		transition: background-color $time-hover;
+	}
+}
+
+// Private channels (PM's)
+.private-channels {
+	.channel {
+		// Normal
+		a {
+			background: transparent;
+			transition: background-color $time-unhover;
+		}
+
+		// Hover
+		&:hover a {
+			background: $color-user-hover;
+			transition: background-color $time-hover;
+		}
+
+		// Selected
+		&.selected a {
+			background: $color-user-select;
+			transition: background-color $time-hover;
+		}
+	}
+}
+
+// Friend list
+.theme-dark #friends .friends-table .friends-row {
+	background: transparent;
+	transition: background-color $time-unhover;
+
+	// Use the same margin/padding as hover (not sure why it is different)
+	margin: 0 20px;
+    padding: 16px 10px;
+
+	&:hover {
+		background: $color-user-hover;
+		transition: background-color $time-hover;
+	}
+}
+
 // Giving things dark instead of gray transparancy, selector copied from discord
 .theme-dark .friends-table .messages .divider:before,    .theme-dark .friends-table .messages .divider span, 
 .theme-dark .messages-wrapper .messages .divider:before, .theme-dark .messages-wrapper .messages .divider span {
@@ -137,8 +201,8 @@ div[class*="channels"] {
 // Scroll bars
 .theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-thumb, 
 .theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
-	background-color: rgba(darken($main-color, 15%), 25%);
-	border: 1px solid rgba(darken($main-color, 0%), 50%);
+	background-color: $color-scrollbar-inner;
+	border: 1px solid $color-scrollbar-outer;
 	border-radius: 999px;
 }
 .theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-track-piece, 

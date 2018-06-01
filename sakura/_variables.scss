@@ -1,11 +1,20 @@
 // Colors
 $main-color: hotpink;
+$color-user-hover: rgba($main-color, 25%);
+$color-user-select: rgba($main-color, 40%);
+$color-channel-hover: rgba($main-color, 25%);
+$color-channel-select: rgba($main-color, 40%);
+$color-channel-border: $main-color;
+$color-scrollbar-inner: rgba(darken($main-color, 15%), 25%);
+$color-scrollbar-outer: rgba(darken($main-color, 0%), 50%);
 
 // Dimensions
 $chat-avatar-size: 64px;
 
 // Transparancy and dim
 $dim-background: 70%;
+$time-hover: 0.125s;
+$time-unhover: 0.5s;
 
 // Images
 $background: url(https://wallpaperhdimages.com/wp-content/uploads/2017/08/Beautiful-Sakura-Flower-HD-Wallpapers.jpg);
