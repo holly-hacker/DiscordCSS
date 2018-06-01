@@ -10,6 +10,9 @@ As for loading the CSS themes into Discord, I recommend using [BeautifulDiscord 
 It's a great tool that allows hot-reloading custom CSS in Discord, and doesn't have the security risks that come with
 BetterDiscord (which I advice you not to use). Instructions to install it can be found in its repository.
 
+**NOTE**: These styles are meant to work with the **Dark** Discord theme. If you use the White theme, please switch to
+Dark if you don't like looking at a broken mess.
+
 ## Themes
 
 ### Sakura
