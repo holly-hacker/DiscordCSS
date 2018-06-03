@@ -9,6 +9,20 @@ div[class*="layer-"] > div[class*="container-"] {
 	background-size: cover;
 }
 
+// Server list
+@if $glow-unread-server {
+	@keyframes glow-guild-unread {
+		from { box-shadow: 0 0 10px 0px $main-color; }
+		to { box-shadow: 0 0 10px 3px $main-color; }
+	}
+	.guilds-wrapper .guilds .guild.unread:before {
+		display: none;
+	}
+	.guilds-wrapper .guilds .guild.unread:not(.selected) .guild-inner {
+		animation: glow-guild-unread 1.5s infinite alternate;
+	}
+}
+
 // Channel list
 div[class*="channels-"] {
 	div[class*="scrollerWrap-"] {
