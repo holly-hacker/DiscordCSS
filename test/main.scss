@@ -1,7 +1,7 @@
 // Toggles
-$move-in-messages: true;    // Moves in both messages and channels
-$style-own-messages: true;  // Gives your name a rainbow effect in chat
-$hide-member-list: true;    // Collapses the member list showing only avatar, unless you hover over it
+$move-in-messages: false;   // Moves in both messages and channels
+$style-own-messages: false; // Gives your name a rainbow effect in chat
+$hide-member-list: false;   // Collapses the member list showing only avatar, unless you hover over it
 $user-id: 113009395494830080;
 
 // Make messages move in
@@ -26,13 +26,13 @@ $user-id: 113009395494830080;
 // Do some stuff with your own messages
 @if ($style-own-messages) {
     @keyframes colorRotate {
-        from    { color: hsl(0, 100%, 50%);   } 
-        16.6%   { color: hsl(300, 100%, 50%); } 
-        33.3%   { color: hsl(240, 100%, 50%);   } 
-        50%     { color: hsl(180, 100%, 50%); } 
-        66.6%   { color: hsl(120, 100%, 50%);   } 
-        83.3%   { color: hsl(60, 100%, 50%); } 
-        to      { color: hsl(0, 100%, 50%);   }
+        from    { text-shadow: 0 0 5px hsl(0, 100%, 50%);   } 
+        16.6%   { text-shadow: 0 0 5px hsl(300, 100%, 50%); } 
+        33.3%   { text-shadow: 0 0 5px hsl(240, 100%, 50%);   } 
+        50%     { text-shadow: 0 0 5px hsl(180, 100%, 50%); } 
+        66.6%   { text-shadow: 0 0 5px hsl(120, 100%, 50%);   } 
+        83.3%   { text-shadow: 0 0 5px hsl(60, 100%, 50%); } 
+        to      { text-shadow: 0 0 5px hsl(0, 100%, 50%);   }
     }
     .message-group div[style*='#{$user-id}']+.comment {
         .user-name {
