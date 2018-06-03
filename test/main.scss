@@ -1,0 +1,73 @@
+// Toggles
+$move-in-messages: true;    // Moves in both messages and channels
+$style-own-messages: true;  // Gives your name a rainbow effect in chat
+$hide-member-list: true;    // Collapses the member list showing only avatar, unless you hover over it
+$user-id: 113009395494830080;
+
+// Make messages move in
+@if ($move-in-messages) {
+    @keyframes message-animation {
+        from {margin-left: -20px; margin-right: 60px; opacity: 0;}
+        to {margin-left: 20px; margin-right: 20px; opacity: 1;}
+    }
+    @keyframes channel-animation {
+        from {margin-left: -40px; margin-right: 20px; opacity: 0;}
+        to {margin-left: 0; margin-right: 0; opacity: 1;}
+    }
+    .message-group {
+        animation: message-animation 0.5s;
+    }
+
+    div[class*="containerDefault-"] {
+        animation: channel-animation 0.5s;
+    }
+}
+
+// Do some stuff with your own messages
+@if ($style-own-messages) {
+    @keyframes colorRotate {
+        from    { color: hsl(0, 100%, 50%);   } 
+        16.6%   { color: hsl(300, 100%, 50%); } 
+        33.3%   { color: hsl(240, 100%, 50%);   } 
+        50%     { color: hsl(180, 100%, 50%); } 
+        66.6%   { color: hsl(120, 100%, 50%);   } 
+        83.3%   { color: hsl(60, 100%, 50%); } 
+        to      { color: hsl(0, 100%, 50%);   }
+    }
+    .message-group div[style*='#{$user-id}']+.comment {
+        .user-name {
+            animation: colorRotate 3s linear 0s infinite;
+        }
+    }
+}
+
+// Half-hide member list, showing only avatars
+@if ($hide-member-list) {
+    div[class*="membersWrap-"] {
+        min-width: 45px;
+        width: 45px;
+        transition: min-width 0.5s, width 0.5s;
+
+        div[class*="membersGroup-"] {
+            display: none;
+        }
+
+        div[class*="member-"] {
+           margin-left: 0;
+        }
+
+        &:hover {
+            min-width: 240px;
+            width: 240px;
+            transition: min-width 0.5s, width 0.5s;
+
+            div[class*="membersGroup-"] {
+                display: block;
+            }
+
+            div[class*="member-"] {
+               margin-left: 8px;
+            }
+        }
+    }
+}
