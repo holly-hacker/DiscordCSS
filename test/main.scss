@@ -2,6 +2,7 @@
 $move-in-messages: false;   // Moves in both messages and channels
 $style-own-messages: false; // Gives your name a rainbow effect in chat
 $hide-member-list: false;   // Collapses the member list showing only avatar, unless you hover over it
+$custom-emoji: false;       // Replaces some of the default emoji
 $user-id: 113009395494830080;
 
 // Make messages move in
@@ -71,3 +72,10 @@ $user-id: 113009395494830080;
         }
     }
 }
+
+@if($custom-emoji) {
+    .emoji[alt=":thinking:"] {
+        content: url(http://i0.kym-cdn.com/photos/images/original/001/302/286/432.png);
+    }
+}
+
