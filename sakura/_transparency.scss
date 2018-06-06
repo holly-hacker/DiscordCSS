@@ -1,5 +1,5 @@
 // Full transparency
-div[class*="layer-"], div[class*="layers-"],    // general bg
+div[class*="layer-"] > div[class*="container-"],// One of the top layers
 div[class*="members-"],                         // member list
 .theme-dark .messages-wrapper, .theme-dark .chat form, .theme-dark .chat>.content, // messages	
 .guilds-wrapper .guilds .guild .guild-inner,	// server list	
@@ -8,15 +8,17 @@ div[class*="channels-"] > div,                  // bg for ch. list
 .theme-dark div[class*="headerBar-"],           // friends header
 .theme-dark .friends-table, .theme-dark .messages-wrapper, // friends list
 .guilds-wrapper .guilds-add,					// Add guild item
-.theme-dark div[class*="typing"] {              // x is typing
+.theme-dark div[class*="typing"],               // x is typing
+.guilds-wrapper, div[class*="channels-"],		// Channel
+.theme-dark .chat, 								// Chat
+.theme-dark #friends,							// Friend list
+.theme-dark .channel-members					// Channel members
+{
 	background: transparent!important;
 }
 
 // Semi-transparancy
-.guilds-wrapper, div[class*="channels-"], 
-.theme-dark .chat, 
-.theme-dark #friends,
-.theme-dark .channel-members {
+div[class*="layer-"] {
 	background: rgba(black, $dim-background)!important;
 	background-color: rgba(black, $dim-background)!important;
 }

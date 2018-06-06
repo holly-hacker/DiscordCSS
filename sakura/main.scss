@@ -1,25 +1,23 @@
 // Imports
-@import "mixins";
 @import "variables";
 @import "transparency";
 
 // Wallpaper layer
-div[class*="layer-"] > div[class*="container-"] {
-	background: $background no-repeat center center fixed;
-	background-size: cover;
+div[class*="layers-"] {
+	background: $background no-repeat center center fixed!important;
+	background-size: cover!important;
 }
 
 // Server list
 @if $glow-unread-server {
-	@keyframes glow-guild-unread {
-		from { box-shadow: 0 0 10px 0px $main-color; }
-		to { box-shadow: 0 0 10px 3px $main-color; }
-	}
-	.guilds-wrapper .guilds .guild.unread:not(.selected):before {
-		display: none;
-	}
-	.guilds-wrapper .guilds .guild.unread:not(.selected) .guild-inner {
-		animation: glow-guild-unread 1.5s infinite alternate;
+	.guilds-wrapper .guilds .guild.unread:not(.selected) {
+		@keyframes glow-guild-unread {
+			from { box-shadow: 0 0 10px 0 $main-color; }
+			to { box-shadow: 0 0 10px 3px $main-color; }
+		}
+
+		&:before { display: none; }
+		.guild-inner { animation: glow-guild-unread ease-in-out 1.5s infinite alternate; }
 	}
 }
 
@@ -44,7 +42,7 @@ div[class*="channels-"] {
 		}
 	}
 
-	// All content
+	// All channels
 	div[class*="content-"] {
 		margin: 0 0 0 8px;
 		height: 34px;
@@ -54,7 +52,7 @@ div[class*="channels-"] {
 	// Default channels
 	div[class*="contentDefaultText-"], div[class*="contentUnreadText-"], div[class*="contentMutedText-"], div[class*="contentDefaultVoice-"] {
 		background-color: transparent;
-		border-left: 0px solid transparent;
+		border-left: 0 solid transparent;
 		transition: background-color    $time-unhover*0.4 ease-out,
 		            border-left-width   $time-unhover ease-in,
 		            border-color        $time-unhover*0.8 ease-in;
@@ -93,14 +91,14 @@ div[class*="channels-"] {
 }
 
 // Chat box
-.theme-dark div[class*="inner-"] {
+.theme-dark div[class*="channelTextArea-"] div[class*="inner-"] {
 	border: 1px solid rgba(desaturate($main-color, 90%), 50%);
 
 	background-color: rgba(#222, .1);
 	transition: background-color $time-hover*2, 
 				border-color $time-hover*2, 
 	            box-shadow $time-hover*2;
-	box-shadow: $main-color 0 0 0px;
+	box-shadow: $main-color 0 0 0;
 
 	&:hover{
 		border: 1px solid rgba(desaturate($main-color, 25%), 75%);
