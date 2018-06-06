@@ -15,7 +15,7 @@ div[class*="layer-"] > div[class*="container-"] {
 		from { box-shadow: 0 0 10px 0px $main-color; }
 		to { box-shadow: 0 0 10px 3px $main-color; }
 	}
-	.guilds-wrapper .guilds .guild.unread:before {
+	.guilds-wrapper .guilds .guild.unread:not(.selected):before {
 		display: none;
 	}
 	.guilds-wrapper .guilds .guild.unread:not(.selected) .guild-inner {
