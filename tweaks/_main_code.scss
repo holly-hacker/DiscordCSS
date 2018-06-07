@@ -191,3 +191,23 @@
         margin-right: 0;
     }
 }
+
+// Custom fonts
+@mixin custom-font-conditional($prop, $val) {
+    @if ($val != null) {
+        @if ($prop == font-size)    { font-size: $val; }
+        @if ($prop == font-family)  { font-family: $val; }
+    }
+}
+@if ($custom-font) {
+    code {
+        @include custom-font-conditional(font-size, $custom-font-size-code);
+        @include custom-font-conditional(font-family, $custom-font-code);
+    }
+
+    @if ($custom-font-ui != null) {
+        ::-webkit-input-placeholder, body, button, input, select, textarea {
+            @include custom-font-conditional(font-family, $custom-font-ui);
+        }
+    }
+}

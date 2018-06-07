@@ -6,6 +6,8 @@ $custom-emoji: false;           // Replaces some of the default emoji
 $server-list-above: false;      // Puts the server list on the top instead of to the side
 $status-indicator-border: false;// Makes the status indicator a circle around the avatar
 $channel-hash-margin: false;    // Moves the channel names a little bit closer to the # symbol
+$custom-font: false;            // Enables custom font stacks and sizes
+
 
 // Settings
 $style-own-messages-user-id: 113009395494830080;
@@ -15,3 +17,7 @@ $collapse-member-list-time-close: 0.6s;
 $server-list-above-below: false;
 $status-indicator-border-transparancy: 100%;
 $status-indicator-border-thickness: 3px;
+$custom-font-size-chat: null;
+$custom-font-size-code: null;   // Code
+$custom-font-ui: null;          // Everything UI
+$custom-font-code: null;        // Code
