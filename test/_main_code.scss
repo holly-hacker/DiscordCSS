@@ -1,0 +1,141 @@
+// Make messages move in
+@if ($move-in-messages) {
+    @keyframes message-animation {
+        from {margin-left: -20px; margin-right: 60px; opacity: 0;}
+        to {margin-left: 20px; margin-right: 20px; opacity: 1;}
+    }
+    @keyframes channel-animation {
+        from {margin-left: -40px; margin-right: 20px; opacity: 0;}
+        to {margin-left: 0; margin-right: 0; opacity: 1;}
+    }
+    .message-group {
+        animation: message-animation 0.5s;
+    }
+
+    div[class*="containerDefault-"] {
+        animation: channel-animation 0.5s;
+    }
+}
+
+// Do some stuff with your own messages
+@if ($style-own-messages) {
+    @keyframes colorRotate {
+        from    { text-shadow: 0 0 5px hsl(0, 100%, 50%);   } 
+        16.6%   { text-shadow: 0 0 5px hsl(300, 100%, 50%); } 
+        33.3%   { text-shadow: 0 0 5px hsl(240, 100%, 50%);   } 
+        50%     { text-shadow: 0 0 5px hsl(180, 100%, 50%); } 
+        66.6%   { text-shadow: 0 0 5px hsl(120, 100%, 50%);   } 
+        83.3%   { text-shadow: 0 0 5px hsl(60, 100%, 50%); } 
+        to      { text-shadow: 0 0 5px hsl(0, 100%, 50%);   }
+    }
+    .message-group div[style*='#{$style-own-messages-user-id}']+.comment {
+        .user-name {
+            animation: colorRotate 3s linear 0s infinite;
+        }
+    }
+}
+
+// Half-hide member list, showing only avatars
+@if ($hide-member-list) {
+    div[class*="membersWrap-"] {
+        min-width: 45px;
+        width: 45px;
+        transition: min-width 0.5s, width 0.5s;
+
+        div[class*="membersGroup-"] {
+            display: none;
+        }
+
+        div[class*="member-"] {
+           margin-left: 0;
+        }
+
+        &:hover {
+            min-width: 240px;
+            width: 240px;
+            transition: min-width 0.5s, width 0.5s;
+
+            div[class*="membersGroup-"] {
+                display: block;
+            }
+
+            div[class*="member-"] {
+               margin-left: 8px;
+            }
+        }
+    }
+}
+
+// Have custom emoji. Not much else to say.
+@if ($custom-emoji) {
+    .emoji[alt=":thinking:"] {
+        content: url(http://i0.kym-cdn.com/photos/images/original/001/302/286/432.png);
+    }
+}
+
+@if ($server-list-above) {
+    // .guilds-wrapper parent
+    div[class*="layer-"]>div {
+        // All direct children (including .guilds-wrapper)
+        flex-direction: column;
+    }
+
+    .guilds-wrapper {
+        width: 100%;
+        height: 75px;
+
+        .scroller-wrap {
+            width: 100%;
+        }
+
+        // Sort of a hack, but it's pretty useless and just obscures the view
+        .unread-mentions-indicator-top, .unread-mentions-indicator-bottom {
+            display: none;
+        }
+
+        .guilds {
+            padding: 5px 10px;
+            display: flex;
+            align-items: flex-start;
+
+            .dms, .guild, .guild-separator {
+                display: inline-block;
+            }
+
+            .friends-online {
+                position: absolute;
+                top: 50px;
+            }
+
+            .dms {
+                margin: 0;
+                .guild:first-child {
+                    margin-left: 10px;
+                }
+            }
+
+            .guild {
+                margin-top: 0!important;
+                
+                &+.guild {
+                    margin-left: 10px;
+                }
+
+                &.selected:before, &.unread:before {
+                    left: 40%;
+                    top: 120%;
+                    transform: rotate(90deg);
+                }
+            }
+
+            .guild-separator {
+                width: 2px;
+                height: 30px;
+                margin-top: 10px;
+                margin-left: 7.5px;
+                margin-right: 7.5px;
+                background-color: #2f3136;
+            }
+        }
+    }
+}

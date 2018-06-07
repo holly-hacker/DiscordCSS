@@ -1,12 +1,5 @@
 // Colors
 $main-color: hotpink;
-$color-user-hover: rgba($main-color, 25%);
-$color-user-select: rgba($main-color, 40%);
-$color-channel-hover: rgba($main-color, 25%);
-$color-channel-select: rgba($main-color, 40%);
-$color-channel-border: $main-color;
-$color-scrollbar-inner: rgba(darken($main-color, 15%), 25%);
-$color-scrollbar-outer: rgba(darken($main-color, 0%), 50%);
 
 // Dimensions
 $chat-avatar-size: 64px;
@@ -24,4 +17,4 @@ $game-dialog: false;
 $glow-unread-server: true;
 
 // Stuff I don't know how to group
-$userid: 113009395494830080;    // Fill in your own userid here.
+$userid: 113009395494830080;    // Replace with with your own userid.

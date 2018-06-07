@@ -1,0 +1,17 @@
+// This file compiles to my personal theme, with my settings and preferences.
+
+// Import the default values of all variables
+@import "sakura/_variables.scss";
+@import "test/_variables.scss";
+
+// Overwrite any variables you like
+$main-color: darken(lightblue, 25%);
+$background: url('https://newevolutiondesigns.com/images/freebies/cool-wallpaper-19.jpg');
+$server-list-above: true;
+
+// Import the second round of variables, which are derived from the first set (eg. color variations)
+@import "sakura/_variables2.scss";
+
+// Import the main code
+@import "sakura/_main_code.scss";
+@import "test/_main_code.scss";

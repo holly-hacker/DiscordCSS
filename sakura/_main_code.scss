@@ -1,0 +1,227 @@
+// Imports
+@import "transparency";
+
+// Wallpaper layer
+div[class*="layers-"] {
+	background: $background no-repeat center center fixed!important;
+	background-size: cover!important;
+}
+
+// Server list
+@if $glow-unread-server {
+	.guilds-wrapper .guilds .guild.unread:not(.selected) {
+		@keyframes glow-guild-unread {
+			from { box-shadow: 0 0 10px 0 $main-color; }
+			to { box-shadow: 0 0 10px 3px $main-color; }
+		}
+
+		&:before { display: none; }
+		.guild-inner { animation: glow-guild-unread ease-in-out 1.5s infinite alternate; }
+	}
+}
+
+// Channel list
+div[class*="channels-"] {
+	div[class*="scrollerWrap-"] {
+		// #'s
+		svg {
+			color: $main-color!important;
+			margin-right: 0;
+			opacity: 1;
+		}
+
+		// Unread notif
+		div[class*="unread-"] {
+			background: $main-color;
+			border-radius: 5px 0 0 5px;
+			height: 100%;
+			left: 4px;
+			top: 0;
+			margin: 0;
+		}
+	}
+
+	// All channels
+	div[class*="content-"] {
+		margin: 0 0 0 8px;
+		height: 34px;
+		border-radius: 0;
+	}
+
+	// Default channels
+	div[class*="contentDefaultText-"], div[class*="contentUnreadText-"], div[class*="contentMutedText-"], div[class*="contentDefaultVoice-"] {
+		background-color: transparent;
+		border-left: 0 solid transparent;
+		transition: background-color    $time-unhover*0.4 ease-out,
+		            border-left-width   $time-unhover ease-in,
+		            border-color        $time-unhover*0.8 ease-in;
+	}
+
+	// Hovered channels
+	div[class*="contentHoveredText-"], div[class*="contentHoveredVoice-"]:active, div[class*="contentSelectedVoice-"]:active { 
+		background-color: $color-channel-hover;
+		border-left: 5px solid $color-channel-border;
+		transition: background-color    $time-hover*0.4,
+		            border-left-width   $time-hover*0.8;
+	}
+	
+	// Selected channels
+	div[class*="contentSelectedText-"] { 
+		background-color: $color-channel-select;
+		border-left: 5px solid $color-channel-border;
+		transition: background-color 0.3s cubic-bezier(0,.75,1,2);
+	}
+
+	// Channel names
+	div[class*="nameDefaultText"], div[class*="nameDefaultVoice"], div[class*="nameLockedText"], div[class*="nameLockedVoice"] {
+		color: #888; // Brighten a bit
+	}
+}
+
+// Code blocks
+.theme-dark .message-group .comment .markup  {
+	code.inline, pre {
+		border: 1px solid $main-color;
+		background: rgba(#222, 50%);
+	}
+	pre code {
+		background: transparent;
+	}
+}
+
+// Chat box
+.theme-dark div[class*="channelTextArea-"] div[class*="inner-"] {
+	border: 1px solid rgba(desaturate($main-color, 90%), 50%);
+
+	background-color: rgba(#222, .1);
+	transition: background-color $time-hover*2, 
+				border-color $time-hover*2, 
+	            box-shadow $time-hover*2;
+	box-shadow: $main-color 0 0 0;
+
+	&:hover{
+		border: 1px solid rgba(desaturate($main-color, 25%), 75%);
+		background-color: rgba(#888, .2);
+		box-shadow: rgba($main-color, 50%) 0 0 5px;
+		transition: background-color $time-unhover, 
+					border-color $time-unhover, 
+		            box-shadow $time-unhover;
+	}
+
+	// Textarea
+	textarea::-webkit-input-placeholder {
+		color: transparent;
+	}
+}
+
+// Messages
+@if $game-dialog {
+	.message-group {
+		padding: 5px;
+		margin-left: 20px;
+		display: inline-block;
+		width: 100%;
+
+		.avatar-large {
+			margin-bottom: 10px;
+			margin-top: 0;
+			right: 0;
+			margin-left: auto;
+			width: $chat-avatar-size;
+			height: $chat-avatar-size;
+			background-size: $chat-avatar-size $chat-avatar-size;
+		}
+
+		.avatar-large[style*="#{$userid}"] {
+			margin-left: 0;
+		}
+
+		.comment {
+			padding: 10px;
+			background: rgba(white, 25%);
+			border-radius: 10px;
+		}
+	}
+}
+
+// Member list
+.theme-dark div[class*="member-"] {
+	// Normal
+	div[class*="content-"] {
+		background: transparent;
+		transition: background-color $time-unhover;
+	}
+
+	// Hovered
+	&:hover div[class*="content-"] {
+		background: $color-user-hover;
+		transition: background-color $time-hover;
+	}
+
+	// Selected
+	&.popout-open div[class*="content-"], &.popout-open:hover div[class*="content-"] {
+		background: $color-user-select;
+		transition: background-color $time-hover;
+	}
+}
+
+// Private channels (PM's)
+.private-channels {
+	.channel {
+		// Normal
+		a {
+			background: transparent;
+			transition: background-color $time-unhover;
+		}
+
+		// Hover
+		&:hover a {
+			background: $color-user-hover;
+			transition: background-color $time-hover;
+		}
+
+		// Selected
+		&.selected a {
+			background: $color-user-select;
+			transition: background-color $time-hover;
+		}
+	}
+}
+
+// Friend list
+.theme-dark #friends .friends-table .friends-row {
+	background: transparent;
+	transition: background-color $time-unhover;
+
+	// Use the same margin/padding as hover (not sure why it is different)
+	margin: 0 20px;
+    padding: 16px 10px;
+
+	&:hover {
+		background: $color-user-hover;
+		transition: background-color $time-hover;
+	}
+}
+
+// Giving things dark instead of gray transparancy, selector copied from discord
+.theme-dark .friends-table .messages .divider:before,    .theme-dark .friends-table .messages .divider span, 
+.theme-dark .messages-wrapper .messages .divider:before, .theme-dark .messages-wrapper .messages .divider span {
+	background-color: rgba(0, 0, 0, 25%);
+}
+
+// Scroll bars
+.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-thumb, 
+.theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
+	background-color: $color-scrollbar-inner;
+	border: 1px solid $color-scrollbar-outer;
+	border-radius: 999px;
+}
+.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-track-piece, 
+.theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
+	background-color: transparent;
+	border: 0;
+	margin: 3px;
+}
+.scroller-wrap .scroller::-webkit-scrollbar {
+	width: 10px!important;
+}
