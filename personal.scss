@@ -2,7 +2,7 @@
 
 // Import the default values of all variables
 @import "sakura/_variables.scss";
-@import "test/_variables.scss";
+@import "tweaks/_variables.scss";
 
 // Overwrite any variables you like
 $main-color: darken(lightblue, 25%);
@@ -12,10 +12,11 @@ $collapse-member-list: true;
 $status-indicator-border: true;
 $status-indicator-border-transparancy: 25%;
 $status-indicator-border-thickness: 15px;
+$channel-hash-margin: true;
 
 // Import the second round of variables, which are derived from the first set (eg. color variations)
 @import "sakura/_variables2.scss";
 
 // Import the main code
 @import "sakura/_main_code.scss";
-@import "test/_main_code.scss";
+@import "tweaks/_main_code.scss";

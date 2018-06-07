@@ -152,7 +152,7 @@
     }
 }
 
-// Shit idk
+// Change status indicator
 @mixin status-color($status, $color) {
     div[class*="status#{$status}-"] { border-color: rgba($color, $status-indicator-border-transparancy)!important; }
 }
@@ -182,5 +182,12 @@
         .memberInner-2CPc3V {
             margin-left: $status-indicator-border-thickness - 5px;
         }
+    }
+}
+
+// Move channel names closer to # symbol
+@if ($channel-hash-margin) {
+    div[class*="channels-"] div[class*="scrollerWrap-"] svg[class*="icon-"] {
+        margin-right: 0;
     }
 }

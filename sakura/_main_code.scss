@@ -26,7 +26,6 @@ div[class*="channels-"] {
 		// #'s
 		svg {
 			color: $main-color!important;
-			margin-right: 0;
 			opacity: 1;
 		}
 
@@ -73,13 +72,13 @@ div[class*="channels-"] {
 	}
 
 	// Channel names
-	div[class*="nameDefaultText"], div[class*="nameDefaultVoice"], div[class*="nameLockedText"], div[class*="nameLockedVoice"] {
+	div[class*="nameDefaultText-"], div[class*="nameDefaultVoice-"], div[class*="nameLockedText-"], div[class*="nameLockedVoice-"] {
 		color: #888; // Brighten a bit
 	}
 }
 
 // Code blocks
-.theme-dark .message-group .comment .markup  {
+.theme-dark .message-group .comment .markup {
 	code.inline, pre {
 		border: 1px solid $main-color;
 		background: rgba(#222, 50%);
