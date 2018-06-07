@@ -147,3 +147,36 @@
         }
     }
 }
+
+// Shit idk
+@mixin status-color($status, $color) {
+    div[class*="status#{$status}-"] { border-color: rgba($color, $status-indicator-border-transparancy)!important; }
+}
+@if ($status-indicator-border) {
+    div[class*="avatar-"][class*="small-"] {
+        div[class*="mask-"] {
+            -webkit-mask: none!important;
+            mask: none!important;
+        }
+
+        div[class*="status-"] {
+            top: -$status-indicator-border-thickness;
+            left: -$status-indicator-border-thickness;
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            border-width: $status-indicator-border-thickness;
+        }
+
+        @include status-color('Online', #43b581);
+        @include status-color('Idle', #faa61a);
+        @include status-color('Dnd', #f04747);
+    }
+
+    // Move the member name left if the user has a very high border thickness
+    @if ($status-indicator-border-thickness > 5) {
+        .memberInner-2CPc3V {
+            margin-left: $status-indicator-border-thickness - 5px;
+        }
+    }
+}
