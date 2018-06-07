@@ -5,4 +5,8 @@ $collapse-member-list: false;   // Collapses the member list showing only avatar
 $custom-emoji: false;           // Replaces some of the default emoji
 $server-list-above: false;      // Puts the server list on the top instead of to the side
 
+// Settings
 $style-own-messages-user-id: 113009395494830080;
+$collapse-member-list-delay: 0.1s;
+$collapse-member-list-time-open: 0.4s;
+$collapse-member-list-time-close: 0.6s;

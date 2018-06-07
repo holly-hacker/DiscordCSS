@@ -40,30 +40,35 @@
     div[class*="membersWrap-"] {
         min-width: 45px;
         width: 45px;
-        transition: min-width 0.5s, width 0.5s;
+        transition: min-width $collapse-member-list-time-close, width $collapse-member-list-time-close;
 
         div[class*="membersGroup-"] {
             // Letting the margin stay because it's a nice divisor.
-            height: 0;
-            transition: height 0.5s;
+            height: 10px;
+            transition: height $collapse-member-list-time-close;
         }
 
         div[class*="member-"] {
            margin-left: 0;
+           transition: margin-left $collapse-member-list-time-close;
         }
 
         &:hover {
             min-width: 240px;
             width: 240px;
-            transition: min-width 0.5s, width 0.5s;
+            transition: min-width $collapse-member-list-time-open, width $collapse-member-list-time-open;
+            transition-delay: $collapse-member-list-delay;
 
             div[class*="membersGroup-"] {
-                transition: height 0.5s;
+                transition: height $collapse-member-list-time-open;
+                transition-delay: $collapse-member-list-delay;
                 height: 40px;
             }
 
             div[class*="member-"] {
                margin-left: 8px;
+               transition: margin-left $collapse-member-list-time-open;
+               transition-delay: $collapse-member-list-delay;
             }
         }
     }
