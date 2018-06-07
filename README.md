@@ -15,7 +15,22 @@ Dark if you don't like looking at a broken mess.
 
 ## Themes
 
+### Custom Configurations
+Because these themes are meant to be very configurable, it's easy to create your own configuration with the settings 
+you prefer. Below, you can find an example of a configuration that I use (at the time of writing) where various extra
+options are enabled.
+
+Path: `personal.scss`
+
+![Custom configuration screenshot](https://uwaa.moe/i/XHUAGXG)
+
+![member list](https://thumbs.gfycat.com/FatherlyTinyIberianlynx-size_restricted.gif)
+![channel list animations](https://thumbs.gfycat.com/WeakJampackedAquaticleech-size_restricted.gif)
+![unread server](https://thumbs.gfycat.com/SardonicWhirlwindHydatidtapeworm-size_restricted.gif)
+
 ### Sakura
 A pink style, inspired by cherry blossoms.
+
+Path: `sakura/main.scss`
 
 ![Sakura theme screenshot](https://uwaa.moe/i/AQHYbJH)
