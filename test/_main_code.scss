@@ -81,6 +81,7 @@
     }
 }
 
+// Have the server list appear at the top of the page
 @if ($server-list-above) {
     // .guilds-wrapper parent
     div[class*="layer-"]>div {
@@ -91,6 +92,9 @@
     .guilds-wrapper {
         width: 100%;
         height: 75px;
+        @if ($server-list-above-below) {
+            order: 999;
+        }
 
         .scroller-wrap {
             width: 100%;
