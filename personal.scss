@@ -8,6 +8,7 @@
 $main-color: darken(lightblue, 25%);
 $background: url('https://newevolutiondesigns.com/images/freebies/cool-wallpaper-19.jpg');
 $server-list-above: true;
+$collapse-member-list: true;
 
 // Import the second round of variables, which are derived from the first set (eg. color variations)
 @import "sakura/_variables2.scss";

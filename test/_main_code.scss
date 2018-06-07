@@ -36,14 +36,16 @@
 }
 
 // Half-hide member list, showing only avatars
-@if ($hide-member-list) {
+@if ($collapse-member-list) {
     div[class*="membersWrap-"] {
         min-width: 45px;
         width: 45px;
         transition: min-width 0.5s, width 0.5s;
 
         div[class*="membersGroup-"] {
-            display: none;
+            // Letting the margin stay because it's a nice divisor.
+            height: 0;
+            transition: height 0.5s;
         }
 
         div[class*="member-"] {
@@ -56,7 +58,8 @@
             transition: min-width 0.5s, width 0.5s;
 
             div[class*="membersGroup-"] {
-                display: block;
+                transition: height 0.5s;
+                height: 40px;
             }
 
             div[class*="member-"] {
