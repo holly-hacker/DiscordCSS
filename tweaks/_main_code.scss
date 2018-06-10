@@ -172,10 +172,10 @@
             border-width: $status-indicator-border-thickness;
         }
 
-        @include status-color('Online', #43b581);
-        @include status-color('Idle', #faa61a);
-        @include status-color('Dnd', #f04747);
-        @include status-color('Streaming', #593695);
+        @include status-color('Online', $status-indicator-border-color-online);
+        @include status-color('Idle', $status-indicator-border-color-idle);
+        @include status-color('Dnd', $status-indicator-border-color-dnd);
+        @include status-color('Streaming', $status-indicator-border-color-streaming);
     }
 
     // Move the member name left if the user has a very high border thickness
