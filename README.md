@@ -27,6 +27,7 @@ Path: `personal.scss`
 ![member list](https://thumbs.gfycat.com/FatherlyTinyIberianlynx-size_restricted.gif)
 ![channel list animations](https://thumbs.gfycat.com/WeakJampackedAquaticleech-size_restricted.gif)
 ![unread server](https://thumbs.gfycat.com/SardonicWhirlwindHydatidtapeworm-size_restricted.gif)
+![code blocks logos](https://uwaa.moe/i/AR4yQZW)
 
 ### Sakura
 A pink style, inspired by cherry blossoms.

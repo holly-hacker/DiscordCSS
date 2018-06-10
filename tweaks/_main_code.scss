@@ -212,3 +212,29 @@
         }
     }
 }
+
+// Code language stuff
+@mixin language-image($lang, $code) {
+    .hljs.#{unquote($lang)} {
+        background: url('https://devstickers.com/assets/img/pro/#{unquote($code)}.png') top right no-repeat!important;
+        background-size: 28px!important;
+     }
+}
+@if ($code-block-images) {
+    @include language-image('cs',  '2p4i');
+    @include language-image('cpp', '35k9');
+    @include language-image('js',  'i4eg');
+    @include language-image('html','ny2e');
+    @include language-image('css', '267e');
+    @include language-image('php', '1nt5');
+    @include language-image('rb',  'uwgt');
+    @include language-image('ruby','uwgt');
+    @include language-image('py',  'p3jo');
+    @include language-image('swift','ji5v');
+    @include language-image('go',  'hyc7');
+    @include language-image('dart','rvwm');
+    @include language-image('hs',  'iz0n');
+    @include language-image('ls',  'j4vm');
+    @include language-image('rs',  'fzk3');
+    // @include language-image('cl',  'k7yf');
+}
