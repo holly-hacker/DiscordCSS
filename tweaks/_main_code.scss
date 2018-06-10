@@ -175,6 +175,7 @@
         @include status-color('Online', #43b581);
         @include status-color('Idle', #faa61a);
         @include status-color('Dnd', #f04747);
+        @include status-color('Streaming', #593695);
     }
 
     // Move the member name left if the user has a very high border thickness
