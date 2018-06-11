@@ -213,7 +213,7 @@
     }
 }
 
-// Code language stuff
+// Code block images
 @mixin language-image($lang, $code) {
     .hljs.#{unquote($lang)} {
         background: url('https://devstickers.com/assets/img/pro/#{unquote($code)}.png') top right no-repeat!important;
@@ -237,4 +237,11 @@
     @include language-image('ls',  'j4vm');
     @include language-image('rs',  'fzk3');
     // @include language-image('cl',  'k7yf');
+}
+
+// Hide download button on web client
+@if ($web-hide-download-button) {
+    .btn-download-apps {
+        display: none!important;
+    }
 }
