@@ -23,6 +23,7 @@ $status-indicator-border-color-online: #43b581;
 $status-indicator-border-color-idle: #faa61a;
 $status-indicator-border-color-dnd: #f04747;
 $status-indicator-border-color-streaming: #593695;
+$status-indicator-border-nomove: true;                  // Makes it so the expanding member list doesn't move in the Y axis
 $custom-font-size-chat: null;
 $custom-font-size-code: null;   // Code
 $custom-font-ui: null;          // Everything UI
