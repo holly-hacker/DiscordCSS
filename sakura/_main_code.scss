@@ -224,3 +224,29 @@ div[class*="channels-"] {
 .scroller-wrap .scroller::-webkit-scrollbar {
 	width: 10px!important;
 }
+
+// Context menu
+// TODO: put colors in variables
+@if ($custom-context-menu) {
+    div[class*="contextMenu-"] {
+        background: #171717!important;
+        border: 1px solid #767676;
+        border-radius: 0;
+
+        div[class*="itemGroup-"] {
+            padding: 5px 0;
+        }
+
+        div[class*="itemSubMenu-"] {
+            background-color: transparent;
+        }
+
+        div[class*="item-"] {
+            border-radius: 0;
+            margin: 0;
+            &:hover {
+                background-color: #2e2e2e;
+            }
+        }
+    }
+}
