@@ -13,6 +13,7 @@
 // Import the default values of all variables
 @import "sakura/_variables.scss";
 @import "tweaks/_variables.scss";
+@import "experiments/_variables.scss";
 
 
 // Overwrite any variables you like
@@ -43,3 +44,4 @@ $custom-font-size-code: 12px!important;
 // Import the main code
 @import "sakura/_main_code.scss";
 @import "tweaks/_main_code.scss";
+@import "experiments/_main_code.scss";
