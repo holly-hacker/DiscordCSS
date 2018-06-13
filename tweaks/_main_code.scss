@@ -211,3 +211,95 @@
         display: none!important;
     }
 }
+
+// Change the look of the user popup
+@if ($alternative-user-popup) {
+    // General popout, borders
+    div[class*="userPopout-"] {
+        box-shadow: none;
+
+        // Make sure shadow on children is visible
+        padding: 5px;
+        margin: -5px;
+
+        // Give children shadow
+        &>div {
+            box-shadow: 0 0 10px 0px rgba(#000,.5);
+            border-radius: 5px;
+        }
+
+        // Space between elements
+        div[class*="body-"] {
+            margin: 5px 0;
+        }
+    }
+
+    // Head part
+    div[class*="headerTop"] {
+        // Have slightly less padding
+        padding: 10px;
+
+        // Avatar size
+        div[class*="popout-"] {
+            width: 128px;
+            height: 128px;
+
+            // Make the status indicator not round
+            div[class*="avatarStatus-"] {
+                border-radius: 0;
+            }
+        }
+        
+        // Avatar border radius
+        div[class*="popout-"] > div[class*="image-"], div[class*="avatarHint-"] {
+            border-radius: 10px!important;
+        }
+
+        // Remove mask on avatar
+        div[class*="maskProfile-"] {
+            -webkit-mask: none;
+            mask: none;
+        }
+
+        // Box around username
+        div[class*="headerText-"] {
+            background: #484848;
+            padding: 3px 5px;
+            border-radius: 5px;
+        }
+    }
+
+    // Body part
+    $role-height: 18px;
+    $font-size: 12px;   // $role-height / 2
+    li[class*="role-"] {
+        // Make border into background
+        padding: 0;
+        height: $role-height;
+        border-width: $role-height/2;
+        border-radius: $role-height/2;
+        font-size: $font-size;
+
+        // Make the circle snugly fit into the corner
+        button[class*="roleCircle-"] {
+            border-radius: 50% 0 0 50%;
+            height: $role-height;
+            width: $role-height*0.85;
+            margin-left: -$role-height/2;
+            
+            // Try to text-align somewhat
+            margin-right: 7px;
+        }
+
+        // Make the add button look better
+        &[class*="addButton-"] {
+            //padding: 6px;
+            border-width: 0;
+        }
+    }
+
+    // Footer part
+    div[class*="protip-"] {
+        display: none;
+    }
+}
