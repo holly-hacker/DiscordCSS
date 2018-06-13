@@ -11,8 +11,7 @@
             transition: height $collapse-member-list-time-close;
 
             @if ($status-indicator-border-nomove) {
-                transition: height $collapse-member-list-time-close, margin-top $collapse-member-list-time-close;
-                margin-top: 0px;
+                transition: height $collapse-member-list-time-close, padding-top $collapse-member-list-time-close;
             }
         }
 
@@ -30,11 +29,11 @@
             div[class*="membersGroup-"] {
                 transition: height $collapse-member-list-time-open;
                 transition-delay: $collapse-member-list-delay;
-                height: 40px;
+                height: if($status-indicator-border-nomove, 20px, 40px);
 
                 @if ($status-indicator-border-nomove) {
-                    transition: height $collapse-member-list-time-open, margin-top $collapse-member-list-time-open;
-                    margin-top: -20px;
+                    transition: height $collapse-member-list-time-open, padding-top $collapse-member-list-time-open;
+                    padding-top: 0px;
                 }
             }
 
