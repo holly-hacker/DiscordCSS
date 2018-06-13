@@ -299,7 +299,17 @@
     }
 
     // Footer part
-    div[class*="protip-"] {
-        display: none;
+    div[class*="footer-"] {
+        padding: 0 10px;
+        border-top: none;
+
+        // quickMessage
+        input {
+            margin: 10px 0;
+        }
+
+        div[class*="protip-"] {
+            display: none;
+        }
     }
 }
