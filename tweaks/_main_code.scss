@@ -280,7 +280,7 @@
         font-size: $font-size;
 
         // Make the circle snugly fit into the corner
-        button[class*="roleCircle-"] {
+        *[class*="roleCircle-"] {
             border-radius: 50% 0 0 50%;
             height: $role-height;
             width: $role-height*0.85;
