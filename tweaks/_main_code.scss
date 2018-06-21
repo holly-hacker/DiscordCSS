@@ -119,10 +119,11 @@
 
 // Change status indicator
 @mixin status-color($status, $color) {
-    div[class*="status#{$status}-"] { border-color: rgba($color, $status-indicator-border-transparancy)!important; }
+    div[class*="#{$status}-"] { border-color: rgba($color, $status-indicator-border-transparancy)!important; }
 }
 @if ($status-indicator-border) {
-    div[class*="avatar-"][class*="small-"] {
+    //
+    div[class*="members-"] div[class*="wrapper-"][class*="small-"] {
         div[class*="mask-"] {
             -webkit-mask: none!important;
             mask: none!important;
@@ -137,10 +138,10 @@
             border-width: $status-indicator-border-thickness;
         }
 
-        @include status-color('Online', $status-indicator-border-color-online);
-        @include status-color('Idle', $status-indicator-border-color-idle);
-        @include status-color('Dnd', $status-indicator-border-color-dnd);
-        @include status-color('Streaming', $status-indicator-border-color-streaming);
+        @include status-color('online', $status-indicator-border-color-online);
+        @include status-color('idle', $status-indicator-border-color-idle);
+        @include status-color('dnd', $status-indicator-border-color-dnd);
+        @include status-color('streaming', $status-indicator-border-color-streaming);
     }
 
     // Move the member name left if the user has a very high border thickness
@@ -239,14 +240,14 @@
         padding: 10px;
 
         // Avatar size
-        div[class*="popout-"] {
+        div[class*="popout-"]:first-child {
             width: 128px;
             height: 128px;
+        }
 
-            // Make the status indicator not round
-            div[class*="avatarStatus-"] {
-                border-radius: 0;
-            }
+        // Make the status indicator not round
+        div[class*="avatarStatus-"] {
+            border-radius: 0;
         }
         
         // Avatar border radius

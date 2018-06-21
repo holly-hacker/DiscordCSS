@@ -1,7 +1,8 @@
 // This file compiles to my personal theme, with my settings and preferences.
 
 // Import fonts
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
+// Some other nice fonts are Quicksand, Comfortaa, Play, Valera Round
+@import url('https://fonts.googleapis.com/css?family=Exo');
 @font-face {
     font-family: 'Monoid Regular';
     src: url('https://larsenwork.com/monoid/css/Monoid-Regular.woff2') format('woff2');
@@ -33,7 +34,7 @@ $status-indicator-border-thickness: 15px;
 $status-indicator-border-transparancy: 25%;
 
 $custom-font: true;
-$custom-font-ui: Quicksand, sans-serif;
+$custom-font-ui: 'Exo', sans-serif;
 $custom-font-code: 'Monoid Regular', monospace;
 $custom-font-size-code: 12px!important;
 
