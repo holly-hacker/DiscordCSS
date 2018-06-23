@@ -1,0 +1,66 @@
+
+// Wallpaper layer
+div[class*="layers-"]:before {
+    // Make everything work
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    left: 0;
+    right: 0;
+
+    background: $background no-repeat center center fixed!important;
+    background-size: cover!important;
+    filter: blur($background-blur);
+}
+
+// Remove all colors (usually just useless coloring)
+div[class*="layers-"],
+div[class*="layer-"] > div[class*="container-"],
+.guilds-wrapper .guild-inner,
+.guilds-wrapper .guilds-add,
+div[class*="channels-"],
+.chat,
+.chat>.content,
+.chat div[class*="typing-"],
+#friends,
+{
+	background: transparent!important;
+}
+
+// Semi-transparancy
+.guilds-wrapper,
+div[class*="channels-"] > div[class*="container-"],     // account details box, bottom left
+.chat div[class*="title-"],
+.messages-wrapper,
+.chat form,
+div[class*="members-"],
+.private-channels,  // normally has no bg, we add one
+div[class*="activityFeed-"],
+div[class*="activityFeed-"] div[class*="card-"],
+#friends div[class*="headerBar-"],
+#friends .friends-table,
+{
+    background:  rgba(navy, 25%)!important;
+}
+
+// Optional extra transparancy
+div[class*="layer-"] {
+	background: rgba(black, $background-extra-dim)!important;
+	background-color: rgba(black, $background-extra-dim)!important;
+}
+
+// Tweaks for fitting transparancy regions
+// remove corner on top-left and bottom-left of channel list
+div[class*="base-"] {
+    border-radius: 0;
+}
+// change margin to padding
+.chat form {
+    margin: 0;
+    padding: 0 20px;
+}
+.friends-table {
+    margin-top: 0!important;
+    padding-top: 8px;
+}
