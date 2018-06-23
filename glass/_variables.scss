@@ -1,5 +1,20 @@
 
-// Images
+// Background settings
 $background: url('https://i.redd.it/z0zmqzh00j511.jpg');
 $background-blur: 10px;
 $background-extra-dim: 0%;
+$background-hardware-render: true;
+
+// Transparancy settings
+$shadow-color: rgba(black, 75%);
+$shadow-blur: 30px;
+$shadow-blur-cards: 20px;
+$transparancy-guilds: 40%;
+$transparancy-user-details: $transparancy-guilds;
+$transparancy-channel-list: 30%;
+$transparancy-chat-title: 50%;
+$transparancy-chat-messages: 10%;
+$transparancy-chat-form: 30%;
+$transparancy-member-list: $transparancy-chat-form;
+$transparancy-card-header: 25%;
+$transparancy-card-body: 25%;

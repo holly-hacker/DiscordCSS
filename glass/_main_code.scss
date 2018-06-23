@@ -8,6 +8,9 @@ div[class*="layers-"]:before {
     content: "";
     left: 0;
     right: 0;
+    @if $background-hardware-render {
+        transform:translateZ(0);
+    }
 
     background: $background no-repeat center center fixed!important;
     background-size: cover!important;
@@ -28,26 +31,76 @@ div[class*="channels-"],
 	background: transparent!important;
 }
 
-// Semi-transparancy
-.guilds-wrapper,
-div[class*="channels-"] > div[class*="container-"],     // account details box, bottom left
-.chat div[class*="title-"],
-.messages-wrapper,
-.chat form,
-div[class*="members-"],
-.private-channels,  // normally has no bg, we add one
-div[class*="activityFeed-"],
-div[class*="activityFeed-"] div[class*="card-"],
-#friends div[class*="headerBar-"],
-#friends .friends-table,
-{
-    background:  rgba(navy, 25%)!important;
-}
-
 // Optional extra transparancy
 div[class*="layer-"] {
 	background: rgba(black, $background-extra-dim)!important;
 	background-color: rgba(black, $background-extra-dim)!important;
+}
+
+// Semi-transparancy stuff
+.guilds-wrapper {
+    background:  rgba(black, $transparancy-guilds)!important;
+    box-shadow: 0 0 $shadow-blur $shadow-color;
+}
+div[class*="channels-"] {
+    box-shadow: 0 0 $shadow-blur $shadow-color;
+    &> div:first-child {    // channel list
+        background:  rgba(black, $transparancy-channel-list)!important;
+    }
+    &> div:last-child  {   // account details box, bottom left
+        background:  rgba(black, $transparancy-user-details)!important;
+        box-shadow: 0 0 $shadow-blur $shadow-color;
+    }
+}
+.chat {
+    div[class*="title-"] {
+        background: rgba(black, $transparancy-chat-title)!important;
+        box-shadow: 0 0 $shadow-blur $shadow-color;
+    }
+    .messages-wrapper {
+        background: rgba(black, $transparancy-chat-messages)!important;
+    }
+    form {
+        background: rgba(black, $transparancy-chat-form)!important;
+        box-shadow: 0 0 $shadow-blur black!important;
+    }
+}
+div[class*="members-"] {
+    background: rgba(black, $transparancy-member-list)!important;
+}
+div[class*="activityFeed-"] {
+    background: transparent!important;
+
+    div[class*="card-"] {
+        background: transparent!important;
+        box-shadow: 0 0 $shadow-blur-cards black!important;
+
+        &>div[class*="header-"] {
+            background: rgba(black, $transparancy-card-header)!important;
+
+            div[class*="splashArt-"] {
+                opacity: 1;
+                filter: grayscale(50%);
+                -webkit-mask: radial-gradient(100% 100% at top left,hsla(0,0%,100%, 1) 0,hsla(0,0%,100%,0) 100%);
+                
+                * {
+                    opacity: 1!important;
+                }
+            }
+        }
+
+        &>div[class*="body-"] {
+            background: rgba(black, $transparancy-card-body)!important;
+        }
+    }
+}
+
+// Just full transparancy
+.private-channels,  // normally has no bg
+#friends div[class*="headerBar-"],
+#friends .friends-table,
+{
+    background: transparent!important;
 }
 
 // Tweaks for fitting transparancy regions
