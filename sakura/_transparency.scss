@@ -1,5 +1,5 @@
 // Full transparency
-div[class*="layer-"] > div[class*="container-"],// One of the top layers
+div[class*="layer-"]>div[class*="container-"],// One of the top layers
 div[class*="members-"],                         // member list
 .theme-dark .messages-wrapper, .theme-dark .chat form, .theme-dark .chat>.content, // messages	
 .guilds-wrapper .guilds .guild .guild-inner,	// server list	
@@ -12,13 +12,21 @@ div[class*="channels-"] > div,                  // bg for ch. list
 .guilds-wrapper, div[class*="channels-"],		// Channel
 .theme-dark .chat, 								// Chat
 .theme-dark #friends,							// Friend list
-.theme-dark .channel-members					// Channel members
+.theme-dark .channel-members,					// Channel members
+div[class*="activityFeed-"],
+div[class*="activityFeed-"] div[class*="card-"],
 {
 	background: transparent!important;
 }
 
 // Semi-transparancy
-div[class*="layer-"] {
+div[class*="layers-"]>div[class*="layer-"]
+{
 	background: rgba(black, $dim-background)!important;
 	background-color: rgba(black, $dim-background)!important;
+}
+
+
+div[class*="activityFeed-"] div[class*="card-"]>div[class*="header-"] {
+	background: rgba(black, 25%)!important;
 }

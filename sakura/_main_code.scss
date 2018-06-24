@@ -2,7 +2,7 @@
 @import "transparency";
 
 // Wallpaper layer
-div[class*="layers-"] {
+.app>div[class*="layers-"] {
 	background: $background no-repeat center center fixed!important;
 	background-size: cover!important;
 }
