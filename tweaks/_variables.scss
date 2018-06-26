@@ -7,6 +7,7 @@ $custom-font: false;            // Enables custom font stacks and sizes
 $code-block-images: false;      // Adds the programming languages logo to code blocks
 $web-hide-download-button: false;// Hides the download button in the web client
 $alternative-user-popup: false; // Changes the look and feel of the user popup 
+$compact-mode-tweaks: false;    // Makes compact mode more compact, among other things
 
 
 // Settings
@@ -25,3 +26,5 @@ $custom-font-size-chat: null;
 $custom-font-size-code: null;   // Code
 $custom-font-ui: null;          // Everything UI
 $custom-font-code: null;        // Code
+$compact-mode-no-extra-usernames: true;
+$compact-mode-pm-username-color: null;

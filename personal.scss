@@ -29,6 +29,7 @@ $channel-hash-margin: true;
 $code-block-images: true;
 $web-hide-download-button: true;
 $alternative-user-popup: true;
+$compact-mode-tweaks: true;
 
 $status-indicator-border-thickness: 15px;
 $status-indicator-border-transparancy: 25%;
@@ -37,6 +38,8 @@ $custom-font: true;
 $custom-font-ui: 'Exo', sans-serif;
 $custom-font-code: 'Monoid Regular', monospace;
 $custom-font-size-code: 12px!important;
+
+$compact-mode-pm-username-color: #1ce;
 
 
 // Import the second round of variables, which are derived from the first set (eg. color variations)

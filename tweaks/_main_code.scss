@@ -313,3 +313,56 @@
         }
     }
 }
+
+// Tweaks compact mode chat
+@if ($compact-mode-tweaks) {
+    $compact-mode-text-offset: 70px!default;    // You shouldn't change this, but you can
+    .message-group.compact {
+        padding: 0!important;
+        border-bottom: none;
+
+        .accessory {
+            padding-left: $compact-mode-text-offset;
+        }
+
+        @if ($compact-mode-no-extra-usernames) {
+            .message:not(.first) {
+                .username-wrapper {
+                    display: none;
+                }
+            }
+        }
+
+        .message {
+            margin: 3px 0!important;
+        }
+        .markup {
+            padding-left: $compact-mode-text-offset!important;
+            text-indent: -$compact-mode-text-offset!important;
+            margin-top: 0!important;
+        }
+
+        .user-name {
+            &:after {
+                content: ':';
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 4px;
+        }
+    }
+
+    @if ($compact-mode-pm-username-color != null) {
+        .private .compact {
+            .user-name {
+                color: #1ce!important;
+            }
+        }
+    }
+
+    // For some reason this is screwed
+    .divider {
+        margin: 10px 0;
+    }
+}
