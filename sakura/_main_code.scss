@@ -78,18 +78,18 @@ div[class*="channels-"] {
 }
 
 // Code blocks
-.theme-dark .message-group .comment .markup {
+.message-group .comment .markup {
 	code.inline, pre {
-		border: 1px solid $main-color;
-		background: rgba(#222, 50%);
+		border: 1px solid $main-color!important;
+		background-color: rgba(#222, 50%)!important;
 	}
 	pre code {
-		background: transparent;
+		background-color: transparent!important;
 	}
 }
 
 // Chat box
-.theme-dark div[class*="channelTextArea-"] div[class*="inner-"] {
+div[class*="channelTextArea-"] div[class*="inner-"] {
 	border: 1px solid rgba(desaturate($main-color, 90%), 50%);
 
 	background-color: rgba(#222, .1);
@@ -144,7 +144,7 @@ div[class*="channels-"] {
 }
 
 // Member list
-.theme-dark div[class*="member-"] {
+div[class*="member-"] {
 	// Normal
 	div[class*="content-"] {
 		background: transparent;
@@ -153,14 +153,14 @@ div[class*="channels-"] {
 
 	// Hovered
 	&:hover div[class*="content-"] {
-		background: $color-user-hover;
-		transition: background-color $time-hover;
+		background: $color-user-hover!important;
+		transition: background-color $time-hover!important;
 	}
 
 	// Selected
 	&.popout-open div[class*="content-"], &.popout-open:hover div[class*="content-"] {
-		background: $color-user-select;
-		transition: background-color $time-hover;
+		background: $color-user-select!important;
+		transition: background-color $time-hover!important;
 	}
 }
 
@@ -188,7 +188,7 @@ div[class*="channels-"] {
 }
 
 // Friend list
-.theme-dark #friends .friends-table .friends-row {
+#friends .friends-table .friends-row {
 	background: transparent;
 	transition: background-color $time-unhover;
 
@@ -197,27 +197,26 @@ div[class*="channels-"] {
     padding: 16px 10px;
 
 	&:hover {
-		background: $color-user-hover;
-		transition: background-color $time-hover;
+		background: $color-user-hover!important;
+		transition: background-color $time-hover!important;
 	}
 }
 
 // Giving things dark instead of gray transparancy, selector copied from discord
-.theme-dark .friends-table .messages .divider:before,    .theme-dark .friends-table .messages .divider span, 
-.theme-dark .messages-wrapper .messages .divider:before, .theme-dark .messages-wrapper .messages .divider span {
-	background-color: rgba(0, 0, 0, 25%);
+.messages-wrapper .messages .divider:before, .messages-wrapper .messages .divider span {
+	background-color: rgba(0, 0, 0, 25%)!important;
 }
 
 // Scroll bars
-.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-thumb, 
-.theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
-	background-color: $color-scrollbar-inner;
-	border: 1px solid $color-scrollbar-outer;
+.friends-table div[class*="scrollerWrap-"] ::-webkit-scrollbar-thumb, 
+.messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
+	background-color: $color-scrollbar-inner!important;
+	border: 1px solid $color-scrollbar-outer!important;
 	border-radius: 999px;
 }
-.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-track-piece, 
-.theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
-	background-color: transparent;
+.friends-table div[class*="scrollerWrap-"] ::-webkit-scrollbar-track-piece, 
+.messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
+	background-color: transparent!important;
 	border: 0;
 	margin: 3px;
 }
