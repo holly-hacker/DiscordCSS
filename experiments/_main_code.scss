@@ -41,3 +41,30 @@
         content: url(http://i0.kym-cdn.com/photos/images/original/001/302/286/432.png);
     }
 }
+
+@if ($weird-animated-border) {
+    // remove old border
+    div[class*=channelTextArea-] div[class*=inner-] {
+        border: 0!important;
+    }
+    .chat .channelTextArea-1LDbYG {
+        $border-dash-len: 10px;
+        $border-space-len: 10px;
+        $border-width: 6px;
+        //$border-color: #dabeef;
+        $border-color: url(#bdg);
+        $border-speed: 0.4s;
+        $gradient-text: 
+            '<linearGradient id="bdg" gradientTransform="rotate(45)">' +
+                '<stop stop-color="#{gold}"></stop>' +
+                '<stop stop-color="#{#0ac}" offset="1"></stop>' +
+            '</linearGradient>';
+        $data: 
+            '<style>@keyframes bdm {to {stroke-dashoffset: #{-$border-dash-len-$border-space-len};}}</style>' +
+            $gradient-text +
+            '<rect width="100%" height="100%" style="stroke: #{$border-color}; stroke-width: #{$border-width}; fill: none; stroke-dasharray: ' +
+                '#{$border-dash-len} #{$border-space-len}; animation: bdm #{$border-speed} infinite linear;" />';
+
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg">#{$data}</svg>')!important;
+    }
+}
