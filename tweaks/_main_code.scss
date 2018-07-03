@@ -366,3 +366,11 @@
         margin: 10px 0;
     }
 }
+
+// Show loading
+@if (true) {
+    .app + div[style="opacity: 1;"] {
+        //opacity: 0.25!important;
+        display: none;
+    }
+}

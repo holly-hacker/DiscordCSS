@@ -15,6 +15,7 @@ div[class*="channels-"] > div,                  // bg for ch. list
 .theme-dark .channel-members,					// Channel members
 div[class*="activityFeed-"],
 div[class*="activityFeed-"] div[class*="card-"],
+div[class*="noChannel-"],
 {
 	background: transparent!important;
 }
