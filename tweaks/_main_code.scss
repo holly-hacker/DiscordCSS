@@ -308,7 +308,7 @@
             margin: 10px 0;
         }
 
-        div[class*="protip-"] {
+        div[class*="protip-"], div[class*="wumpusWrapper-"] {
             display: none;
         }
     }
