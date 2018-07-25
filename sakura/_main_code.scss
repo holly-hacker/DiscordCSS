@@ -78,7 +78,7 @@ div[class*="channels-"] {
 }
 
 // Code blocks
-.message-group .comment .markup {
+.messages div[class*="markup-"] {
 	code.inline, pre {
 		border: 1px solid $main-color!important;
 		background-color: rgba(#222, 50%)!important;
@@ -110,36 +110,6 @@ div[class*="channelTextArea-"] div[class*="inner-"] {
 	// Textarea
 	textarea::-webkit-input-placeholder {
 		color: transparent;
-	}
-}
-
-// Messages
-@if $game-dialog {
-	.message-group {
-		padding: 5px;
-		margin-left: 20px;
-		display: inline-block;
-		width: 100%;
-
-		.avatar-large {
-			margin-bottom: 10px;
-			margin-top: 0;
-			right: 0;
-			margin-left: auto;
-			width: $chat-avatar-size;
-			height: $chat-avatar-size;
-			background-size: $chat-avatar-size $chat-avatar-size;
-		}
-
-		.avatar-large[style*="#{$userid}"] {
-			margin-left: 0;
-		}
-
-		.comment {
-			padding: 10px;
-			background: rgba(white, 25%);
-			border-radius: 10px;
-		}
 	}
 }
 

@@ -316,46 +316,50 @@
 
 // Tweaks compact mode chat
 @if ($compact-mode-tweaks) {
-    $compact-mode-text-offset: 70px!default;    // You shouldn't change this, but you can
-    .message-group.compact {
+    $compact-mode-text-offset: 8.5ch!default;    // You shouldn't change this, but you could
+    div[class*="containerCompact"] {
         padding: 0!important;
-        border-bottom: none;
-
-        .accessory {
-            padding-left: $compact-mode-text-offset;
+        
+        hr {
+            display: none;
         }
 
-        @if ($compact-mode-no-extra-usernames) {
-            .message:not(.first) {
-                .username-wrapper {
-                    display: none;
+        div[class*="content-"]+div[class*="containerCompact-"] {
+            padding-left: $compact-mode-text-offset!important;
+        }
+
+        div[class*="message-"] {
+            margin: 0!important;
+
+            @if ($compact-mode-no-extra-usernames) {
+                &:not(:first-child) {
+                    span[class*="usernameWrapper-"] {
+                        display: none;
+                    }
                 }
             }
         }
 
-        .message {
-            margin: 3px 0!important;
-        }
-        .markup {
-            padding-left: $compact-mode-text-offset!important;
-            text-indent: -$compact-mode-text-offset!important;
+        div[class*="markup-"] {
             margin-top: 0!important;
+            text-indent: -$compact-mode-text-offset;
         }
 
-        .user-name {
-            &:after {
-                content: ':';
+        h2[class*="headerCompact-"] {
+            margin-right: 0!important;
+
+            span[class*="usernameWrapper-"] {
+                margin-right: 0.3rem;
+                strong:after {
+                    content: ':';
+                }
             }
-        }
-
-        &:last-child {
-            margin-bottom: 4px;
         }
     }
 
     @if ($compact-mode-pm-username-color != null) {
-        .private .compact {
-            .user-name {
+        .private {
+            strong[class*="username-"] {
                 color: #1ce!important;
             }
         }
