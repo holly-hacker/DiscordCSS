@@ -368,7 +368,7 @@
 }
 
 // Show loading
-@if (true) {
+@if ($show-loading) {
     .app + div[style="opacity: 1;"] {
         //opacity: 0.25!important;
         display: none;
