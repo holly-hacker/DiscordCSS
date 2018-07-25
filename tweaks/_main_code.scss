@@ -340,7 +340,7 @@
             }
         }
 
-        div[class*="markup-"] {
+        &>div[class*="markup-"] {
             margin-top: 0!important;
             text-indent: -$compact-mode-text-offset;
         }
