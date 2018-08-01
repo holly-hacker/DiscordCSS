@@ -54,7 +54,7 @@
         flex-direction: column;
     }
 
-    .guilds-wrapper {
+    div[class*="guildsWrapper-"] {
         width: 100%;
         height: 75px;
         @if ($server-list-above-below) {
@@ -66,46 +66,56 @@
         }
 
         // Sort of a hack, but it's pretty useless and just obscures the view
-        .unread-mentions-indicator-top, .unread-mentions-indicator-bottom {
+        div[class*="unreadMentionsIndicatortop-"], div[clas*="unreadMentionsIndicatorBottom-"] {
             display: none;
         }
 
-        .guilds {
+        div[class*="guilds-"] {
             padding: 5px 10px;
             display: flex;
             align-items: flex-start;
 
-            .dms, .guild, .guild-separator {
+            span[class*="dms-"], div[class*="guild-"], div[class*="guildSeparator-"] {
                 display: inline-block;
             }
 
-            .friends-online {
+            button[class*="guildsAdd-"] {
+                margin-top: 0;
+                margin-left: 8px;
+            }
+
+            div[class*="friendsOnline-"] {
                 position: absolute;
                 top: 50px;
             }
 
-            .dms {
+            span[class*="dms-"] {
                 margin: 0;
-                .guild:first-child {
+                div[class*="guild-"]:first-child {
                     margin-left: 10px;
                 }
             }
 
-            .guild {
+            div[class*="guild-"] {
                 margin-top: 0!important;
                 
-                &+.guild {
+                &+div[class*="guild-"] {
                     margin-left: 10px;
                 }
 
-                &.selected:before, &.unread:before {
+                &[class*="selected-"]:before, &[class*="unread-"]:before {
                     left: 40%;
                     top: 120%;
                     transform: rotate(90deg);
                 }
+
+                // Do not display the selected channel indicator for the discord logo (DMs, friends)
+                &:first-child:before {
+                    display: none;
+                }
             }
 
-            .guild-separator {
+            div[class*="guildSeparator-"] {
                 width: 2px;
                 height: 30px;
                 margin-top: 10px;
