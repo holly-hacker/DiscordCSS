@@ -173,19 +173,20 @@ div[class*="member-"] {
 }
 
 // Giving things dark instead of gray transparancy, selector copied from discord
-.messages-wrapper .messages .divider:before, .messages-wrapper .messages .divider span {
+div[class*="messagesWrapper-"] div[class*="messages-"] div[class*="divider-"]:before, 
+div[class*="messagesWrapper-"] div[class*="messages-"] div[class*="divider-"] span {
 	background-color: rgba(0, 0, 0, 25%)!important;
 }
 
 // Scroll bars
 .friends-table div[class*="scrollerWrap-"] ::-webkit-scrollbar-thumb, 
-.messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
+div[class*="messagesWrapper-"] .scroller-wrap ::-webkit-scrollbar-thumb {
 	background-color: $color-scrollbar-inner!important;
 	border: 1px solid $color-scrollbar-outer!important;
 	border-radius: 999px;
 }
 .friends-table div[class*="scrollerWrap-"] ::-webkit-scrollbar-track-piece, 
-.messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
+div[class*="messagesWrapper-"] .scroller-wrap ::-webkit-scrollbar-track-piece {
 	background-color: transparent!important;
 	border: 0;
 	margin: 3px;
