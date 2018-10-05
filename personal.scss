@@ -18,9 +18,9 @@
 
 
 // Overwrite any variables you like
-$main-color: #1ce;
-$background: url('http://getwallpapers.com/wallpaper/full/a/7/b/90116.jpg');
-$dim-background: 40%;
+$main-color: #1eb;
+$background: url('https://i.imgur.com/VGaFq6C.png');
+$dim-background: 60%;
 $glow-unread-server: false;
 
 $server-list-above: true;
@@ -40,8 +40,6 @@ $custom-font: true;
 $custom-font-ui: 'Exo', sans-serif;
 $custom-font-code: 'Monoid Regular', monospace;
 $custom-font-size-code: 12px!important;
-
-$compact-mode-pm-username-color: #1ce;
 
 
 // Import the second round of variables, which are derived from the first set (eg. color variations)
