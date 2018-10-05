@@ -343,7 +343,7 @@
 
             @if ($compact-mode-no-extra-usernames) {
                 &:not(:first-child) {
-                    span[class*="usernameWrapper-"] {
+                    span[class*="username-"] {
                         display: none;
                     }
                 }
@@ -358,9 +358,9 @@
         h2[class*="headerCompact-"] {
             margin-right: 0!important;
 
-            span[class*="usernameWrapper-"] {
+            span[class*="username-"] {
                 margin-right: 0.3rem;
-                strong:after {
+                &:after {
                     content: ':';
                 }
             }
