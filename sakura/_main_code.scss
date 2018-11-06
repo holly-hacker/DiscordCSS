@@ -180,12 +180,14 @@ div[class*="messagesWrapper-"] div[class*="messages-"] div[class*="divider-"] sp
 
 // Scroll bars
 .friends-table div[class*="scrollerWrap-"] ::-webkit-scrollbar-thumb, 
+div[class*="guildsWrapper-"] .scroller-wrap ::-webkit-scrollbar-thumb,
 div[class*="messagesWrapper-"] .scroller-wrap ::-webkit-scrollbar-thumb {
 	background-color: $color-scrollbar-inner!important;
 	border: 1px solid $color-scrollbar-outer!important;
 	border-radius: 999px;
 }
 .friends-table div[class*="scrollerWrap-"] ::-webkit-scrollbar-track-piece, 
+div[class*="guildsWrapper-"] .scroller-wrap ::-webkit-scrollbar-track-piece,
 div[class*="messagesWrapper-"] .scroller-wrap ::-webkit-scrollbar-track-piece {
 	background-color: transparent!important;
 	border: 0;
