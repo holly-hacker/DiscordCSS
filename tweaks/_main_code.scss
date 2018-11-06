@@ -56,13 +56,17 @@
 
     div[class*="guildsWrapper-"] {
         width: 100%;
-        height: 100px;
+        height: 75px;
         @if ($server-list-above-below) {
             order: 999;
         }
 
         .scroller-wrap {
             width: 100%;
+            .scroller {
+                overflow-x: scroll;
+                overflow-y: hidden;
+            }
         }
 
         // Sort of a hack, but it's pretty useless and just obscures the view
@@ -388,11 +392,5 @@
 @if ($hide-unread-mentions-bar) {
     div[class*="unreadMentionsBar-"] {
         display: none;
-    }
-}
-
-@if ($server-list-above and $server-list-above-enable-scrollbar) {
-    .scroller-wrap .scroller {
-        overflow-x: scroll;
     }
 }
