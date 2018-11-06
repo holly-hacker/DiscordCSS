@@ -49,7 +49,7 @@
 // Have the server list appear at the top of the page
 @if ($server-list-above) {
     // .guilds-wrapper parent
-    div[class*="layer-"]>div:not(.ui-standard-sidebar-view) {
+    div[class*="layer-"]>div:not([class*="standardSidebarView-"]) {
         // All direct children (including .guilds-wrapper)
         flex-direction: column;
     }
