@@ -2,7 +2,6 @@
     "saveAndRun": {
         "commands": [
             {
-                // Match against anything in the 'sakura' folder
                 "match": "\\.scss$",
                 "cmd": "sass personal.scss:..\\main.css"
             }
