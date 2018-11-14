@@ -68,7 +68,6 @@
         &:hover {
             .scroller {
                 overflow-x: auto;
-                overflow-y: hidden;
             }
         }
 
@@ -81,6 +80,10 @@
             padding: 5px 10px;
             display: flex;
             align-items: flex-start;
+
+            // fix for friendsOnline- being absolute
+            position: relative;
+            overflow-y: hidden;
 
             span[class*="dms-"], div[class*="guild-"], div[class*="guildSeparator-"] {
                 display: inline-block;
