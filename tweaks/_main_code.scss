@@ -65,6 +65,13 @@
             width: 100%;
         }
 
+        &:hover {
+            .scroller {
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+        }
+
         // Sort of a hack, but it's pretty useless and just obscures the view
         div[class*="unreadMentionsIndicatortop-"], div[clas*="unreadMentionsIndicatorBottom-"] {
             display: none;
@@ -381,6 +388,12 @@
 @if ($show-loading) {
     .app + div[style="opacity: 1;"] {
         //opacity: 0.25!important;
+        display: none;
+    }
+}
+
+@if ($hide-unread-mentions-bar) {
+    div[class*="unreadMentionsBar-"] {
         display: none;
     }
 }
