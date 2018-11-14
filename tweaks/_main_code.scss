@@ -71,9 +71,20 @@
             }
         }
 
-        // Sort of a hack, but it's pretty useless and just obscures the view
-        div[class*="unreadMentionsIndicatortop-"], div[clas*="unreadMentionsIndicatorBottom-"] {
-            display: none;
+        @if ($server-list-above-different-indicators) {
+            div[class*="unreadMentionsIndicator"] { // matches both bottom and top, though only bottom is used
+                left: inherit;
+                bottom: inherit;
+    
+                div[class*="bar-"] {
+                    width: 35px;
+                    height: 25px;
+                }
+                
+                svg {
+                    display: none;
+                }
+            }
         }
 
         div[class*="guilds-"] {
