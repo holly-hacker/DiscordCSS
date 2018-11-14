@@ -63,8 +63,11 @@
 
         .scroller-wrap {
             width: 100%;
+        }
+
+        &:hover {
             .scroller {
-                overflow-x: scroll;
+                overflow-x: auto;
                 overflow-y: hidden;
             }
         }

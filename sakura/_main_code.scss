@@ -186,6 +186,9 @@ div[class*="messagesWrapper-"] .scroller-wrap ::-webkit-scrollbar-thumb {
 	border: 1px solid $color-scrollbar-outer!important;
 	border-radius: 999px;
 }
+div[class*="guildsWrapper-"] .scroller-wrap ::-webkit-scrollbar {
+	height: 6px;
+}
 .friends-table div[class*="scrollerWrap-"] ::-webkit-scrollbar-track-piece, 
 div[class*="guildsWrapper-"] .scroller-wrap ::-webkit-scrollbar-track-piece,
 div[class*="messagesWrapper-"] .scroller-wrap ::-webkit-scrollbar-track-piece {
