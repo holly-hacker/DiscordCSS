@@ -1,4 +1,6 @@
 // Full transparency
+.app>div[class*="layers-"],
+div[class*="layers-"]>div[class*="layer-"],
 div[class*="layer-"]>div[class*="container-"],	// One of the top layers
 div[class*="members-"],                         // member list	
 .theme-dark div[class*="messagesWrapper"],      // messages  
@@ -22,14 +24,7 @@ div[class*="noChannel-"],
 	background: transparent!important;
 }
 
-// Semi-transparancy
-div[class*="layers-"]>div[class*="layer-"]
-{
-	background: rgba(black, $dim-background)!important;
-	background-color: rgba(black, $dim-background)!important;
-}
-
-
+// Semi-transparency
 div[class*="activityFeed-"] div[class*="card-"]>div[class*="header-"] {
 	background: rgba(black, 25%)!important;
 }

@@ -2,8 +2,8 @@
 @import "transparency";
 
 // Wallpaper layer
-.app>div[class*="layers-"] {
-	background: $background no-repeat center center fixed!important;
+#app-mount {
+	background: linear-gradient( rgba(0, 0, 0, $dim-background), rgba(0, 0, 0, $dim-background) ), $background no-repeat center center fixed!important;
 	background-size: cover!important;
 }
 
