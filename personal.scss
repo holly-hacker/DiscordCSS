@@ -2,7 +2,7 @@
 
 // Import fonts
 // Some other nice fonts are Quicksand, Comfortaa, Play, Valera Round
-@import url('https://fonts.googleapis.com/css?family=Exo');
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Comfortaa');
 @font-face {
     font-family: 'Monoid Regular';
     src: url('https://larsenwork.com/monoid/css/Monoid-Regular.woff2') format('woff2');
@@ -18,8 +18,8 @@
 
 
 // Overwrite any variables you like
-$main-color: #1eb;
-$background: url('https://i.imgur.com/VGaFq6C.png');
+$main-color: #e44;
+$background: url('https://cdn01.gitter.im/_s/62eb41f/images/home/banner.jpg');
 $dim-background: 60%;
 $glow-unread-server: false;
 
@@ -39,8 +39,9 @@ $status-indicator-border-thickness: 15px;
 $status-indicator-border-transparancy: 25%;
 
 $custom-font: true;
-$custom-font-ui: 'Exo', sans-serif;
+$custom-font-ui: 'Comfortaa', sans-serif;
 $custom-font-code: 'Monoid Regular', monospace;
+$custom-font-chat: 'Quicksand', sans-serif;
 $custom-font-size-code: 12px!important;
 
 
