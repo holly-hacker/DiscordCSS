@@ -211,6 +211,12 @@
             @include custom-font-conditional(font-family, $custom-font-ui);
         }
     }
+
+    @if ($custom-font-chat != null) {
+        div[class*="chat-"] {
+            @include custom-font-conditional(font-family, $custom-font-chat);
+        }
+    }
 }
 
 // Code block images
