@@ -90,8 +90,12 @@
             position: relative;
             overflow-y: hidden;
 
-            span[class*="dms-"], div[class*="guild-"], div[class*="guildSeparator-"] {
+            div[class*="guild-"], div[class*="guildSeparator-"] {
                 display: inline-block;
+            }
+
+            span[class*="dms-"] {
+                display: inline-flex;
             }
 
             button[class*="guildsAdd-"] {
