@@ -61,7 +61,7 @@
             order: 999;
         }
 
-        .scroller-wrap {
+        div[class*="scrollerWrap"] {
             width: 100%;
         }
 
