@@ -157,14 +157,16 @@ div[class*="privateChannels-"] {
 	}
 }
 
-// Friend list
-#friends .friends-table .friends-row {
+// Friend list, game library rows
+div[class*="friendsRow"],
+div[class*="gameLibrary"] div[class*="rowWrapper"] {
 	background: transparent;
 	transition: background-color $time-unhover;
 
 	// Use the same margin/padding as hover (not sure why it is different)
-	margin: 0 20px;
-    padding: 16px 10px;
+	margin-left: 20px!important;
+	margin-right: 20px!important;
+	padding-left: 10px;
 
 	&:hover {
 		background: $color-user-hover!important;
@@ -179,22 +181,22 @@ div[class*="messagesWrapper-"] div[class*="messages-"] div[class*="divider-"] sp
 }
 
 // Scroll bars
-.friends-table div[class*="scrollerWrap-"] ::-webkit-scrollbar-thumb, 
-div[class*="guildsWrapper-"] .scroller-wrap ::-webkit-scrollbar-thumb,
-div[class*="messagesWrapper-"] .scroller-wrap ::-webkit-scrollbar-thumb {
-	background-color: $color-scrollbar-inner!important;
-	border: 1px solid $color-scrollbar-outer!important;
-	border-radius: 999px;
-}
-.friends-table div[class*="scrollerWrap-"] ::-webkit-scrollbar-track-piece, 
-div[class*="guildsWrapper-"] .scroller-wrap ::-webkit-scrollbar-track-piece,
-div[class*="messagesWrapper-"] .scroller-wrap ::-webkit-scrollbar-track-piece {
-	background-color: transparent!important;
-	border: 0;
-	margin: 3px;
-}
-.scroller-wrap .scroller::-webkit-scrollbar {
-	width: 10px!important;
+div[class*="scrollerWrap-"] {
+	::-webkit-scrollbar-thumb {
+		background-color: $color-scrollbar-inner!important;
+		border: 1px solid $color-scrollbar-outer!important;
+		border-radius: 999px;
+	}
+
+	::-webkit-scrollbar-track-piece {
+		background-color: transparent!important;
+		border: 0!important;
+		margin: 3px;
+	}
+
+	div[class*="scroller-"]::-webkit-scrollbar {
+		width: 10px!important;
+	}
 }
 
 // Context menu

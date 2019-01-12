@@ -149,7 +149,7 @@
         }
 
         // scroll bar
-        .scroller-wrap ::-webkit-scrollbar {
+        div[class*="scrollerWrap"] ::-webkit-scrollbar {
             height: 11px;
         }
     }
