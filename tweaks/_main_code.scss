@@ -48,7 +48,7 @@
 
 // Have the server list appear at the top of the page
 @if ($server-list-above) {
-    // .guilds-wrapper parent
+    // .guildsWrapper parent
     div[class*="layer-"]>div:not([class*="standardSidebarView-"]) {
         // All direct children (including .guilds-wrapper)
         flex-direction: column;
@@ -144,7 +144,7 @@
             }
         }
 
-        &:hover .scroller {
+        &:hover div[class*="scroller-"] {
             overflow-x: auto;
         }
 
@@ -184,7 +184,7 @@
 
     // Move the member name left if the user has a very high border thickness
     @if ($status-indicator-border-thickness > 5) {
-        .memberInner-2CPc3V {
+        div[class*="memberInner-"] {
             margin-left: $status-indicator-border-thickness - 5px;
         }
     }
@@ -413,7 +413,7 @@
 
 // Show loading
 @if ($show-loading) {
-    .app + div[style="opacity: 1;"] {
+    div[class*="app-"] + div[style="opacity: 1;"] {
         //opacity: 0.25!important;
         display: none;
     }
