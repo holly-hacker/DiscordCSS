@@ -1,5 +1,5 @@
 // Full transparency
-.app>div[class*="layers-"],
+div[class*="app-"]>div[class*="layers-"],
 div[class*="layers-"]>div[class*="layer-"],
 div[class*="layer-"]>div[class*="container-"],	// One of the top layers
 div[class*="members-"],                         // member list	
