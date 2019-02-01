@@ -1,3 +1,16 @@
+// Always show spoilers
+@if ($show-spoilers) {
+    span[class*="spoilerText"] {
+
+        @if($show-spoilers-transparent) { background-color: transparent!important; }
+        @else                           { background-color: rgba(32, 34, 37, 0.5)!important; }
+
+        span[class*="inlineContent"] {
+            opacity: 1!important;
+        }
+    }
+}
+
 // Half-hide member list, showing only avatars
 @if ($collapse-member-list) {
     div[class*="membersWrap-"] {
