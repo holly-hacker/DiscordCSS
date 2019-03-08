@@ -10,7 +10,7 @@ div[class*="guildsWrapper"] div[class*="guilds"] div[class*="guild"] div[class*=
 div[class*="channels-"] > div,                  // bg for ch. list
 div[class*="title-"],                           // top channel title
 div[class*="headerBar-"],                       // friends header
-div[class*="guildsWrapper"] button[class*="guildsAdd"],	// Add guild item
+div[class*="circleIconButton-"],				// Add guild item
 div[class*="typing"],                           // x is typing
 div[class*="guildsWrapper"], div[class*="channels-"],	// Channel
 div[class*="chat-"], 				            // Chat
@@ -20,6 +20,7 @@ div[class*="noChannel-"],
 div[class*="channels-"] + div[class*="container-"],	// container holding friendlist
 div[class*="table-"]>div[class*="header-"],// Generic stuff
 div[class*="gameLibrary-"], div[class*="friendsTable-"], div[class*="root-"],
+div[class*="wrapper"]							// all wrappers should be transparent
 {
 	background: transparent!important;
 }
