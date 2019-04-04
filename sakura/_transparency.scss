@@ -12,15 +12,16 @@ div[class*="title-"],                           // top channel title
 div[class*="headerBar-"],                       // friends header
 div[class*="circleIconButton-"],				// Add guild item
 div[class*="typing"],                           // x is typing
-div[class*="guildsWrapper"], div[class*="channels-"],	// Channel
+div[class*="channels-"],	// Channel
+div[class*="layers-"]>div[role="dialog"]>div[class*="container-"]>div[class*="wrapper-"],	// guilds wrapper
+div[class*="unreadMentionsIndicatorTop-"]+div>div>div[class*="container-"]>div>div[class*="wrapper-"],	// guild icon container
 div[class*="chat-"], 				            // Chat
 div[class*="activityFeed-"],
 div[class*="activityFeed-"] div[class*="card-"],
 div[class*="noChannel-"],
 div[class*="channels-"] + div[class*="container-"],	// container holding friendlist
 div[class*="table-"]>div[class*="header-"],// Generic stuff
-div[class*="gameLibrary-"], div[class*="friendsTable-"], div[class*="root-"],
-div[class*="wrapper"]							// all wrappers should be transparent
+div[class*="gameLibrary-"], div[class*="friendsTable-"], div[class*="root-"]
 {
 	background: transparent!important;
 }
