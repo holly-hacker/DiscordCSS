@@ -15,6 +15,7 @@ div[class*="typing"],                           // x is typing
 div[class*="channels-"],	// Channel
 div[class*="layers-"]>div[role="dialog"]>div[class*="container-"]>div[class*="wrapper-"],	// guilds wrapper
 div[class*="unreadMentionsIndicatorTop-"]+div>div>div[class*="container-"]>div>div[class*="wrapper-"],	// guild icon container
+div[class*="unreadMentionsIndicatorTop-"]+div>div>div[class*="container-"]>div[class*="wrapper-"]:first-child,	// guild logo container
 div[class*="chat-"], 				            // Chat
 div[class*="activityFeed-"],
 div[class*="activityFeed-"] div[class*="card-"],

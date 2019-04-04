@@ -54,14 +54,14 @@
         flex-direction: column;
     }
 
-    div[class*="guildsWrapper-"] {
+    div[class*="wrapper-1Rf91z"] {  // .guildsWrapper-XXXXXX
         width: 100%;
         height: 75px;
         @if ($server-list-above-below) {
             order: 999;
         }
 
-        div[class*="scrollerWrap"] {
+        &>div[class*="scrollerWrap-"] {
             width: 100%;
         }
 
@@ -81,7 +81,7 @@
             }
         }
 
-        div[class*="guilds-"] {
+        div[class*="unreadMentionsIndicatorTop-"]+div>div { // .guilds-XXXXXX
             padding: 5px 10px;
             display: flex;
             align-items: flex-start;
@@ -90,15 +90,8 @@
             position: relative;
             overflow-y: hidden;
 
-            div[class*="guild-"], div[class*="guildSeparator-"] {
-                display: inline-block;
-            }
-
-            span[class*="dms-"] {
-                display: inline-flex;
-            }
-
-            button[class*="guildsAdd-"] {
+            // give the 2 fake guilds proper padding too
+            div[class*="createJoinContainer-"], div[class*="createJoinContainer-"]+div {
                 margin-top: 0;
                 margin-left: 8px;
             }
@@ -108,17 +101,23 @@
                 top: 50px;
             }
 
+            // padding for the first DM guild
+            div[class*="friendsOnline-"]+div[class*="container"] {
+                margin-left: 10px;
+            }
+
             span[class*="dms-"] {
+                display: inline-flex;
                 margin: 0;
                 div[class*="guild-"]:first-child {
                     margin-left: 10px;
                 }
             }
 
-            div[class*="guild-"] {
+            &>div[class*="container-"] {    // .guild-XXXXXX
                 margin-top: 0!important;
-                
-                &+div[class*="guild-"] {
+
+                &+div[class*="container-"] {
                     margin-left: 10px;
                 }
 
