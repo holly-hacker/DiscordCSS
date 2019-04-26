@@ -3,8 +3,8 @@
 
 // Wallpaper layer
 #app-mount {
-	background: linear-gradient( rgba(0, 0, 0, $dim-background), rgba(0, 0, 0, $dim-background) ), $background no-repeat center center fixed!important;
-	background-size: cover!important;
+	background: linear-gradient( rgba(0, 0, 0, $dim-background), rgba(0, 0, 0, $dim-background) ), $background!important;
+	background-size: $background-size!important;
 }
 
 // Server list
