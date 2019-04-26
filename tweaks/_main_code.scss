@@ -132,6 +132,11 @@
                         margin-left: 0!important;
                     }
                 }
+
+                // discord logo
+                a[class*="button-"], div[class*='acronym-'] {
+                    background: transparent;
+                }
             }
 
             div[class*="guildSeparator-"] {
