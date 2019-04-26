@@ -47,33 +47,29 @@ div[class*="channels-"] {
 		border-radius: 0;
 	}
 
-	// Default channels
-	div[class*="contentDefaultText-"], div[class*="contentUnreadText-"], div[class*="contentMutedText-"], div[class*="contentDefaultVoice-"] {
-		background-color: transparent;
-		border-left: 0 solid transparent;
-		transition: background-color    $time-unhover*0.4 ease-out,
-		            border-left-width   $time-unhover ease-in,
-		            border-color        $time-unhover*0.8 ease-in;
-	}
+	div[role="button"] {
+		// Default channels
+		&>div {
+			border-left: 0 solid transparent;
+			transition: background-color    $time-unhover*0.4 ease-out,
+			            border-left-width   $time-unhover ease-in,
+			            border-color        $time-unhover*0.8 ease-in;
+		}
 
-	// Hovered channels
-	div[class*="contentHoveredText-"], div[class*="contentHoveredVoice-"]:active, div[class*="contentSelectedVoice-"]:active { 
-		background-color: $color-channel-hover;
-		border-left: 5px solid $color-channel-border;
-		transition: background-color    $time-hover*0.4,
-		            border-left-width   $time-hover*0.8;
-	}
-	
-	// Selected channels
-	div[class*="contentSelectedText-"] { 
-		background-color: $color-channel-select;
-		border-left: 5px solid $color-channel-border;
-		transition: background-color 0.3s cubic-bezier(0,.75,1,2);
-	}
+		// Hovered channels
+		&:hover>div {
+			background-color: $color-channel-hover;
+			border-left: 5px solid $color-channel-border;
+			transition: background-color    $time-hover*0.4,
+			            border-left-width   $time-hover*0.8;
+		}
 
-	// Channel names
-	div[class*="nameDefaultText-"], div[class*="nameDefaultVoice-"], div[class*="nameLockedText-"], div[class*="nameLockedVoice-"] {
-		color: #888; // Brighten a bit
+		// Selected channels
+		&[class*="modeSelected-"]>div {
+			background-color: $color-channel-select!important;
+			border-left: 5px solid $color-channel-border;
+			transition: background-color 0.3s cubic-bezier(0,.75,1,2);
+		}
 	}
 }
 

@@ -7,12 +7,13 @@ div[class*="messagesWrapper"],                  // messages
 div[class*="chat-"] form,
 div[class*="chat-"]>div[class*="content-"],
 div[class*="guildsWrapper"] div[class*="guilds"] div[class*="guild"] div[class*="guildInner"],	// server list	
+div[class*="channels-"],						// Channel list
 div[class*="channels-"] > div,                  // bg for ch. list
+div[class*="channels-"] div[class*="content"],  // channel itself
 div[class*="title-"],                           // top channel title
 div[class*="headerBar-"],                       // friends header
 div[class*="circleIconButton-"],				// Add guild item
 div[class*="typing"],                           // x is typing
-div[class*="channels-"],	// Channel
 div[class*="layers-"]>div[role="dialog"]>div[class*="container-"]>div[class*="wrapper-"],	// guilds wrapper
 div[class*="unreadMentionsIndicatorTop-"]+div>div>div[class*="container-"]>div>div[class*="wrapper-"],	// guild icon container
 div[class*="unreadMentionsIndicatorTop-"]+div>div>div[class*="container-"]>div[class*="wrapper-"]:first-child,	// guild logo container
