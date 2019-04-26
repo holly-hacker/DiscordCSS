@@ -114,22 +114,23 @@
                 }
             }
 
-            &>div[class*="container-"] {    // .guild-XXXXXX
+            &>div[class*="listItem-"] {    // .guild-XXXXXX
                 margin-top: 0!important;
 
                 &+div[class*="container-"] {
                     margin-left: 10px;
                 }
 
-                &[class*="selected-"]:before, &[class*="unread-"]:before {
-                    left: 40%;
-                    top: 120%;
+                // unread notification
+                div[class*="pill-"] {
+                    left: 43.5%;
+                    top: 70%;
                     transform: rotate(90deg);
-                }
 
-                // Do not display the selected channel indicator for the discord logo (DMs, friends)
-                &:first-child:before {
-                    display: none;
+                    span[class*="item-"] {
+                        border-radius: 4px!important;
+                        margin-left: 0!important;
+                    }
                 }
             }
 
