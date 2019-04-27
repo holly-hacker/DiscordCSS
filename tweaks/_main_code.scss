@@ -114,7 +114,7 @@
                 }
             }
 
-            &>div[class*="listItem-"] {    // .guild-XXXXXX
+            div[class*="listItem-"] {    // .guild-XXXXXX
                 margin-top: 0!important;
 
                 &+div[class*="container-"] {
