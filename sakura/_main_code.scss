@@ -112,19 +112,17 @@ div[class*="channelTextArea-"] div[class*="inner-"] {
 // Member list
 div[class*="member-"] {
 	// Normal
-	div[class*="content-"] {
-		background: transparent;
-		transition: background-color $time-unhover;
-	}
+	background: transparent;
+	transition: background-color $time-unhover;
 
 	// Hovered
-	&:hover div[class*="content-"] {
+	&:hover {
 		background: $color-user-hover!important;
 		transition: background-color $time-hover!important;
 	}
 
 	// Selected
-	&.popout-open div[class*="content-"], &.popout-open:hover div[class*="content-"] {
+	&.popout-open, &.popout-open:hover {
 		background: $color-user-select!important;
 		transition: background-color $time-hover!important;
 	}
