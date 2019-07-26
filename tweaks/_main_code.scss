@@ -50,8 +50,31 @@
 @if ($server-list-above) {
     // .guildsWrapper parent
     div[class*="layer-"]>div:not([class*="standardSidebarView-"]) {
-        // All direct children (including .guilds-wrapper)
         flex-direction: column;
+    }
+
+    // server folder
+    .wrapper-21YSNc {
+        width: auto;
+        display: flex;
+        
+        .expandedFolderBackground-2sPsd- {
+            // shape expanded folder bg
+            width: 100%;
+            left: 0px;
+            top: -8px;
+            bottom: 0px;
+
+            width: 100%;
+
+            &.collapsed-1GMuSb {
+                background-color: transparent!important;
+            }
+        }
+        .expandedGuilds-1JMD4M {
+            height: auto!important;
+            display: flex;
+        }
     }
 
     div[class*="wrapper-1Rf91z"] {  // .guildsWrapper-XXXXXX

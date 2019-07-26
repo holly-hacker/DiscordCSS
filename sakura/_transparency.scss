@@ -23,12 +23,15 @@ div[class*="activityFeed-"] div[class*="card-"],
 div[class*="noChannel-"],
 div[class*="channels-"] + div[class*="container-"],	// container holding friendlist
 div[class*="table-"]>div[class*="header-"],// Generic stuff
-div[class*="gameLibrary-"], div[class*="friendsTable-"], div[class*="root-"]
+div[class*="gameLibrary-"], div[class*="friendsTable-"], div[class*="root-"],
+div[class*="folder-"]	// server folder
 {
 	background: transparent!important;
 }
 
 // Semi-transparency
-div[class*="activityFeed-"] div[class*="card-"]>div[class*="header-"] {
+div[class*="activityFeed-"] div[class*="card-"]>div[class*="header-"],
+span[class*="expandedFolderBackground-"]	// open server folder
+{
 	background: rgba(black, 25%)!important;
 }
