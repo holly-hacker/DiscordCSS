@@ -18,20 +18,22 @@
 
 
 // Overwrite any variables you like
+/*
 $main-color: #3d2;
 $background: url('https://www.speedrun.com/themes/pokemon/background.png?v=16876eb8') repeat 100%;
 $background-size: auto;
 $dim-background: 66%;
+/*/
 
 // In case you want your own wallpaper, you probably want settings like this:
-/*
-$main-color: #e44;
-$background: url('https://cdn01.gitter.im/_s/62eb41f/images/home/banner.jpg') no-repeat center center fixed;
+
+$main-color: #d89259;
+$background: url('https://i.imgur.com/1gMTdJN.jpg') no-repeat center center fixed;
 $background-size: cover;
-$dim-background: 50%;
+$dim-background: 66%;
 //*/
 
-$glow-unread-server: false;
+$glow-unread-server: false; // TODO: remove
 
 $server-list-above: true;
 $collapse-member-list: true;
