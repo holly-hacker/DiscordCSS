@@ -1,37 +1,40 @@
-// Full transparency
-div[class*="app-"]>div[class*="layers-"],
-div[class*="layers-"]>div[class*="layer-"],
-div[class*="layer-"]>div[class*="container-"],	// One of the top layers
-div[class*="members-"],                         // member list	
-div[class*="messagesWrapper"],                  // messages  
-div[class*="chat-"] form,
-div[class*="chat-"]>div[class*="content-"],
-div[class*="guildsWrapper"] div[class*="guilds"] div[class*="guild"] div[class*="guildInner"],	// server list	
-div[class*="channels-"],						// Channel list
-div[class*="channels-"] > div,                  // bg for ch. list
-div[class*="channels-"] div[class*="content"],  // channel itself
-div[class*="title-"],                           // top channel title
-div[class*="headerBar-"],                       // friends header
-div[class*="circleIconButton-"],				// Add guild item
-div[class*="typing"],                           // x is typing
-div[class*="layers-"]>div[role="dialog"]>div[class*="container-"]>div[class*="wrapper-"],	// guilds wrapper
-div[class*="unreadMentionsIndicatorTop-"]+div>div>div[class*="container-"]>div>div[class*="wrapper-"],	// guild icon container
-div[class*="unreadMentionsIndicatorTop-"]+div>div>div[class*="container-"]>div[class*="wrapper-"]:first-child,	// guild logo container
-div[class*="chat-"], 				            // Chat
-div[class*="activityFeed-"],
-div[class*="activityFeed-"] div[class*="card-"],
-div[class*="noChannel-"],
-div[class*="channels-"] + div[class*="container-"],	// container holding friendlist
-div[class*="table-"]>div[class*="header-"],// Generic stuff
-div[class*="gameLibrary-"], div[class*="friendsTable-"], div[class*="root-"],
-div[class*="folder-"]	// server folder
-{
-	background: transparent!important;
-}
-
-// Semi-transparency
-div[class*="activityFeed-"] div[class*="card-"]>div[class*="header-"],
-span[class*="expandedFolderBackground-"]	// open server folder
-{
-	background: rgba(black, 25%)!important;
+.theme-dark {
+    --background-primary: transparent; //#36393f;
+    --background-secondary: transparent; //#2f3136;
+    --background-tertiary: transparent; //#202225;
+    --background-accent: transparent; //#4f545c;
+	--background-floating: transparent; //#18191c;
+    --deprecated-panel-background: transparent; //#292b2f;
+	/*
+    --header-primary: #fff;
+    --header-secondary: #b9bbbe;
+    --text-normal: #dcddde;
+    --text-muted: #72767d;
+    --text-link: #00b0f4;
+    --channels-default: #8e9297;
+    --interactive-normal: #b9bbbe;
+    --interactive-hover: #dcddde;
+    --interactive-active: #fff;
+    --interactive-muted: #4f545c;
+    --background-modifier-hover: rgba(79,84,92,0.16);
+    --background-modifier-active: rgba(79,84,92,0.24);
+    --background-modifier-selected: rgba(79,84,92,0.32);
+    --background-modifier-accent: hsla(0,0%,100%,0.06);
+    --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+    --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+    --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+    --channeltextarea-background: #40444b;
+    --activity-card-background: #202225;
+    --deprecated-panel-background: #292b2f;
+    --deprecated-card-bg: rgba(32,34,37,0.6);
+    --deprecated-card-editable-bg: rgba(32,34,37,0.3);
+    --deprecated-store-bg: #36393f;
+    --deprecated-quickswitcher-input-background: #72767d;
+    --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
+    --deprecated-text-input-bg: rgba(0,0,0,0.1);
+    --deprecated-text-input-border: rgba(0,0,0,0.3);
+    --deprecated-text-input-border-hover: #040405;
+    --deprecated-text-input-border-disabled: #202225;
+	--deprecated-text-input-prefix: #dcddde;
+	*/
 }

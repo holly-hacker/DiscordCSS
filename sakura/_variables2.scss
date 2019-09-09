@@ -1,8 +1,8 @@
 // Colors derived from the main color
-$color-user-hover: rgba($main-color, 25%);
-$color-user-select: rgba($main-color, 40%);
-$color-channel-hover: rgba($main-color, 25%);
-$color-channel-select: rgba($main-color, 40%);
+$color-user-hover: rgba($main-color, 0.25);
+$color-user-select: rgba($main-color, 0.40);
+$color-channel-hover: rgba($main-color, 0.25);
+$color-channel-select: rgba($main-color, 0.40);
 $color-channel-border: $main-color;
-$color-scrollbar-inner: rgba(darken($main-color, 15%), 25%);
-$color-scrollbar-outer: rgba(darken($main-color, 0%), 50%);
+$color-scrollbar-inner: rgba(darken($main-color, 0.15), 0.25);
+$color-scrollbar-outer: rgba(darken($main-color, 0), 0.50);
