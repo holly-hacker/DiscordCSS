@@ -49,8 +49,14 @@
 // Have the server list appear at the top of the page
 @if ($server-list-above) {
     // .guildsWrapper parent
-    div[class*="layer-"]>div:not([class*="standardSidebarView-"]) {
-        flex-direction: column;
+    .container-2lgZY8 {
+        display: flex;
+        flex-direction: row;
+
+        .base-3dtUhz {
+            top: 72px; // inverted from original
+            left: 0px;
+        }
     }
 
     // server folder
