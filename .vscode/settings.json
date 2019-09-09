@@ -3,7 +3,7 @@
         "commands": [
             {
                 "match": "\\.scss$",
-                "cmd": "sass personal.scss:..\\main.css"
+                "cmd": "sass personal.scss:../main.css"
             }
         ]
     }
