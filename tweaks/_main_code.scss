@@ -1,13 +1,17 @@
 // Half-hide member list, showing only avatars
 @if ($collapse-member-list) {
     div[class*="membersWrap-"] {
-        min-width: 45px;
-        width: 45px;
+        min-width: 50px;
+        width: 50px;
         transition: min-width $collapse-member-list-time-close, width $collapse-member-list-time-close;
 
-        div[class*="membersGroup-"] {
+        div[aria-label="Members"] {
+            flex-shrink: 1;
+        }
+
+        h2[class*="membersGroup-"] {
             // Letting the margin stay because it's a nice divisor.
-            height: if($status-indicator-border-nomove, 20px, 10px);
+            height: if($status-indicator-border-nomove, 44px, 10px);
             transition: height $collapse-member-list-time-close;
 
             @if ($status-indicator-border-nomove) {
@@ -26,14 +30,13 @@
             transition: min-width $collapse-member-list-time-open, width $collapse-member-list-time-open;
             transition-delay: $collapse-member-list-delay;
 
-            div[class*="membersGroup-"] {
+            h2[class*="membersGroup-"] {
                 transition: height $collapse-member-list-time-open;
                 transition-delay: $collapse-member-list-delay;
-                height: if($status-indicator-border-nomove, 20px, 40px);
+                height: if($status-indicator-border-nomove, 44px, 40px);
 
                 @if ($status-indicator-border-nomove) {
                     transition: height $collapse-member-list-time-open, padding-top $collapse-member-list-time-open;
-                    padding-top: 0px;
                 }
             }
 
