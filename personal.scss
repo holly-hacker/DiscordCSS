@@ -14,7 +14,6 @@
 // Import the default values of all variables
 @import "sakura/_variables.scss";
 @import "tweaks/_variables.scss";
-@import "experiments/_variables.scss";
 
 
 // Overwrite any variables you like
@@ -41,7 +40,6 @@ $alternative-user-popup: true;
 // $server-list-above: true;
 // $status-indicator-border: true;
 // $web-hide-download-button: true;
-// $show-loading: true;
 
 $server-list-above-different-indicators: true;
 
@@ -62,4 +60,3 @@ $custom-font-size-code: 12px!important;
 // Import the main code
 @import "sakura/_main_code.scss";
 @import "tweaks/_main_code.scss";
-// @import "experiments/_main_code.scss";

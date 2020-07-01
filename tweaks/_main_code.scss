@@ -392,14 +392,6 @@
     }
 }
 
-// Show loading
-@if ($show-loading) {
-    div[class*="app-"] + div[style="opacity: 1;"] {
-        //opacity: 0.25!important;
-        display: none;
-    }
-}
-
 @if ($hide-unread-mentions-bar) {
     div[class*="unreadMentionsBar-"] {
         display: none;
