@@ -14,7 +14,6 @@
 // Import the default values of all variables
 @import "sakura/_variables.scss";
 @import "tweaks/_variables.scss";
-@import "experiments/_variables.scss";
 
 
 // Overwrite any variables you like
@@ -33,17 +32,14 @@ $background-size: cover;
 $dim-background: 0.66;
 //*/
 
-$glow-unread-server: false; // TODO: remove
-
-$server-list-above: true;
 $collapse-member-list: true;
-$status-indicator-border: true;
-$channel-hash-margin: true;
 $code-block-images: true;
-$web-hide-download-button: true;
 $alternative-user-popup: true;
-$compact-mode-tweaks: true;
-$show-loading: true;
+
+// TODO: fix these
+// $server-list-above: true;
+// $status-indicator-border: true;
+// $web-hide-download-button: true;
 
 $server-list-above-different-indicators: true;
 
@@ -64,4 +60,3 @@ $custom-font-size-code: 12px!important;
 // Import the main code
 @import "sakura/_main_code.scss";
 @import "tweaks/_main_code.scss";
-@import "experiments/_main_code.scss";

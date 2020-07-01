@@ -1,10 +1,17 @@
 .theme-dark {
     --background-primary: transparent; //#36393f;
     --background-secondary: transparent; //#2f3136;
+    --background-secondary-alt: transparent; //#292b2f;
     --background-tertiary: transparent; //#202225;
     --background-accent: transparent; //#4f545c;
 	--background-floating: transparent; //#18191c;
     --deprecated-panel-background: transparent; //#292b2f;
+
+    // background for friend list
+    .container-1D34oG {
+        background-color: transparent;
+    }
+
 	/*
     --header-primary: #fff;
     --header-secondary: #b9bbbe;

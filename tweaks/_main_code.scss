@@ -1,13 +1,17 @@
 // Half-hide member list, showing only avatars
 @if ($collapse-member-list) {
     div[class*="membersWrap-"] {
-        min-width: 45px;
-        width: 45px;
+        min-width: 50px;
+        width: 50px;
         transition: min-width $collapse-member-list-time-close, width $collapse-member-list-time-close;
 
-        div[class*="membersGroup-"] {
+        div[aria-label="Members"] {
+            flex-shrink: 1;
+        }
+
+        h2[class*="membersGroup-"] {
             // Letting the margin stay because it's a nice divisor.
-            height: if($status-indicator-border-nomove, 20px, 10px);
+            height: if($status-indicator-border-nomove, 44px, 10px);
             transition: height $collapse-member-list-time-close;
 
             @if ($status-indicator-border-nomove) {
@@ -26,14 +30,13 @@
             transition: min-width $collapse-member-list-time-open, width $collapse-member-list-time-open;
             transition-delay: $collapse-member-list-delay;
 
-            div[class*="membersGroup-"] {
+            h2[class*="membersGroup-"] {
                 transition: height $collapse-member-list-time-open;
                 transition-delay: $collapse-member-list-delay;
-                height: if($status-indicator-border-nomove, 20px, 40px);
+                height: if($status-indicator-border-nomove, 44px, 40px);
 
                 @if ($status-indicator-border-nomove) {
                     transition: height $collapse-member-list-time-open, padding-top $collapse-member-list-time-open;
-                    padding-top: 0px;
                 }
             }
 
@@ -224,13 +227,6 @@
     }
 }
 
-// Move channel names closer to # symbol
-@if ($channel-hash-margin) {
-    div[class*="channels-"] div[class*="scrollerWrap-"] svg[class*="icon-"] {
-        margin-right: 0;
-    }
-}
-
 // Custom fonts
 @mixin custom-font-conditional($prop, $val) {
     @if ($val != null) {
@@ -354,7 +350,7 @@
     // Body part
     $role-height: 18px;
     $font-size: 12px;   // $role-height / 2
-    li[class*="role-"] {
+    div[class*="role-"] {
         // Make border into background
         padding: 0;
         height: $role-height;
@@ -390,66 +386,9 @@
             margin: 10px 0;
         }
 
-        div[class*="protip-"], div[class*="wumpusWrapper-"] {
+        div[class*="protip-"] {
             display: none;
         }
-    }
-}
-
-// Tweaks compact mode chat
-@if ($compact-mode-tweaks) {
-    $compact-mode-text-offset: 8.5ch!default;    // You shouldn't change this, but you could
-    div[class*="containerCompact"] {
-        padding: 0!important;
-        
-        hr {
-            display: none;
-        }
-
-        div[class*="content-"]+div[class*="containerCompact-"] {
-            padding-left: $compact-mode-text-offset!important;
-        }
-
-        div[class*="message-"] {
-            margin: 0!important;
-
-            @if ($compact-mode-no-extra-usernames) {
-                &:not(:first-child) {
-                    span[class*="username-"] {
-                        display: none;
-                    }
-                }
-            }
-        }
-
-        &>div[class*="markup-"] {
-            margin-top: 0!important;
-            text-indent: -$compact-mode-text-offset;
-        }
-
-        h2[class*="headerCompact-"] {
-            margin-right: 0!important;
-
-            span[class*="username-"] {
-                margin-right: 0.3rem;
-                &:after {
-                    content: ':';
-                }
-            }
-        }
-    }
-
-    // For some reason this is screwed
-    .divider {
-        margin: 10px 0;
-    }
-}
-
-// Show loading
-@if ($show-loading) {
-    div[class*="app-"] + div[style="opacity: 1;"] {
-        //opacity: 0.25!important;
-        display: none;
     }
 }
 
