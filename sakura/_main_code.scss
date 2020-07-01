@@ -2,27 +2,14 @@
 @import "colors";
 
 // Wallpaper layer
-.app-19_DXt {
+div[class*="app-"] {
 	background: linear-gradient( rgba(0, 0, 0, $dim-background), rgba(0, 0, 0, $dim-background) ), $background!important;
 	background-size: $background-size!important;
 }
 
-// Server list
-@if $glow-unread-server {
-	.guilds-wrapper .guilds .guild.unread:not(.selected) {
-		@keyframes glow-guild-unread {
-			from { box-shadow: 0 0 10px 0 $main-color; }
-			to { box-shadow: 0 0 10px 3px $main-color; }
-		}
-
-		&:before { display: none; }
-		.guild-inner { animation: glow-guild-unread ease-in-out 1.5s infinite alternate; }
-	}
-}
-
 // Channel list
-div[class*="channels-"] {
-	div[class*="scrollerWrap-"] {
+div[aria-label="Channels"] {
+	div[role="listitem"][id*="channels-"] {
 		// #'s
 		svg {
 			color: $main-color!important;
@@ -35,25 +22,16 @@ div[class*="channels-"] {
 			border-radius: 5px 0 0 5px;
 			height: 100%;
 			left: 4px;
-			top: 0;
+			top: 1px;
 			margin: 0;
 		}
-	}
 
-	// All channels
-	div[class*="content-"] {
-		margin: 0 0 0 8px;
-		height: 34px;
-		border-radius: 0;
-	}
-
-	div[role="button"] {
 		// Default channels
 		&>div {
 			border-left: 0 solid transparent;
 			transition: background-color    $time-unhover*0.4 ease-out,
-			            border-left-width   $time-unhover ease-in,
-			            border-color        $time-unhover*0.8 ease-in;
+						border-left-width   $time-unhover ease-in,
+						border-color        $time-unhover*0.8 ease-in;
 		}
 
 		// Hovered channels
@@ -61,7 +39,7 @@ div[class*="channels-"] {
 			background-color: $color-channel-hover;
 			border-left: 5px solid $color-channel-border;
 			transition: background-color    $time-hover*0.4,
-			            border-left-width   $time-hover*0.8;
+						border-left-width   $time-hover*0.8;
 		}
 
 		// Selected channels
@@ -70,6 +48,13 @@ div[class*="channels-"] {
 			border-left: 5px solid $color-channel-border;
 			transition: background-color 0.3s cubic-bezier(0,.75,1,2);
 		}
+	}
+
+	// All channels, TODO: remove?
+	div[class*="content-"] {
+		margin: 0 0 0 8px;
+		height: 34px;
+		border-radius: 0;
 	}
 }
 
@@ -85,7 +70,7 @@ div[class*="messages-"] div[class*="markup-"] {
 }
 
 // Chat box
-div[class*="channelTextArea-"] div[class*="inner-"] {
+div[class*="channelTextArea-"] div[class*="scrollableContainer-"] {
 	border: 1px solid rgba(desaturate($main-color, 0.90), 0.50);
 
 	background-color: rgba(#222, .1);
@@ -122,49 +107,30 @@ div[class*="member-"] {
 	}
 
 	// Selected
-	&.popout-open, &.popout-open:hover {
+	&[class*="selected-"] {
 		background: $color-user-select!important;
 		transition: background-color $time-hover!important;
 	}
 }
 
 // Private channels (PM's)
-div[class*="privateChannels-"] {
-	div[class*="channel-"] {
-		// Normal
-		a {
-			background: transparent;
-			transition: background-color $time-unhover;
-		}
-
-		// Hover
-		&:hover a {
-			background: $color-user-hover;
-			transition: background-color $time-hover;
-		}
-
-		// Selected
-		&[class*="selected-"] a {
-			background: $color-user-select;
-			transition: background-color $time-hover;
-		}
+#private-channels {
+	// Normal
+	a {
+		background: transparent;
+		transition: background-color $time-unhover;
 	}
-}
 
-// Friend list, game library rows
-div[class*="friendsRow"],
-div[class*="gameLibrary"] div[class*="rowWrapper"] {
-	background: transparent;
-	transition: background-color $time-unhover;
+	// Hover
+	a:hover {
+		background: $color-user-hover;
+		transition: background-color $time-hover;
+	}
 
-	// Use the same margin/padding as hover (not sure why it is different)
-	margin-left: 20px!important;
-	margin-right: 20px!important;
-	padding-left: 10px;
-
-	&:hover {
-		background: $color-user-hover!important;
-		transition: background-color $time-hover!important;
+	// Selected
+	a[class*="selected-"] {
+		background: $color-user-select;
+		transition: background-color $time-hover;
 	}
 }
 

@@ -33,8 +33,6 @@ $background-size: cover;
 $dim-background: 0.66;
 //*/
 
-$glow-unread-server: false; // TODO: remove
-
 $server-list-above: true;
 $collapse-member-list: true;
 $status-indicator-border: true;
@@ -63,5 +61,5 @@ $custom-font-size-code: 12px!important;
 
 // Import the main code
 @import "sakura/_main_code.scss";
-@import "tweaks/_main_code.scss";
-@import "experiments/_main_code.scss";
+// @import "tweaks/_main_code.scss";
+// @import "experiments/_main_code.scss";
