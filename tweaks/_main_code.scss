@@ -227,13 +227,6 @@
     }
 }
 
-// Move channel names closer to # symbol
-@if ($channel-hash-margin) {
-    div[class*="channels-"] div[class*="scrollerWrap-"] svg[class*="icon-"] {
-        margin-right: 0;
-    }
-}
-
 // Custom fonts
 @mixin custom-font-conditional($prop, $val) {
     @if ($val != null) {
@@ -357,7 +350,7 @@
     // Body part
     $role-height: 18px;
     $font-size: 12px;   // $role-height / 2
-    li[class*="role-"] {
+    div[class*="role-"] {
         // Make border into background
         padding: 0;
         height: $role-height;
@@ -393,58 +386,9 @@
             margin: 10px 0;
         }
 
-        div[class*="protip-"], div[class*="wumpusWrapper-"] {
+        div[class*="protip-"] {
             display: none;
         }
-    }
-}
-
-// Tweaks compact mode chat
-@if ($compact-mode-tweaks) {
-    $compact-mode-text-offset: 8.5ch!default;    // You shouldn't change this, but you could
-    div[class*="containerCompact"] {
-        padding: 0!important;
-        
-        hr {
-            display: none;
-        }
-
-        div[class*="content-"]+div[class*="containerCompact-"] {
-            padding-left: $compact-mode-text-offset!important;
-        }
-
-        div[class*="message-"] {
-            margin: 0!important;
-
-            @if ($compact-mode-no-extra-usernames) {
-                &:not(:first-child) {
-                    span[class*="username-"] {
-                        display: none;
-                    }
-                }
-            }
-        }
-
-        &>div[class*="markup-"] {
-            margin-top: 0!important;
-            text-indent: -$compact-mode-text-offset;
-        }
-
-        h2[class*="headerCompact-"] {
-            margin-right: 0!important;
-
-            span[class*="username-"] {
-                margin-right: 0.3rem;
-                &:after {
-                    content: ':';
-                }
-            }
-        }
-    }
-
-    // For some reason this is screwed
-    .divider {
-        margin: 10px 0;
     }
 }
 

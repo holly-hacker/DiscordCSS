@@ -2,12 +2,10 @@
 $collapse-member-list: false;   // Collapses the member list showing only avatar, unless you hover over it
 $server-list-above: false;      // Puts the server list on the top instead of to the side
 $status-indicator-border: false;// Makes the status indicator a circle around the avatar
-$channel-hash-margin: false;    // Moves the channel names a little bit closer to the # symbol
 $custom-font: false;            // Enables custom font stacks and sizes
 $code-block-images: false;      // Adds the programming languages logo to code blocks
 $web-hide-download-button: false;// Hides the download button in the web client
 $alternative-user-popup: false; // Changes the look and feel of the user popup 
-$compact-mode-tweaks: false;    // Makes compact mode more compact, among other things
 $hide-unread-mentions-bar: false;// 'unread mentions' bar can get in the way when using horizontal server list
 
 
@@ -28,4 +26,3 @@ $custom-font-size-code: null;   // Code
 $custom-font-ui: null;          // Everything UI
 $custom-font-code: null;        // Code
 $custom-font-chat: null;        // Chat
-$compact-mode-no-extra-usernames: true;
